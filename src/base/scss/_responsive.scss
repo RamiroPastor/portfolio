@@ -1,0 +1,23 @@
+// Responsive
+
+$break1: 576px;
+$break2: 768px;
+$break3: 992px;
+
+@mixin landscape {
+  @media only screen and (min-width: $break1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $break2) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $break3) {
+    @content;
+  }
+}

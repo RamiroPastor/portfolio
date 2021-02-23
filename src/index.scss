@@ -1,0 +1,10 @@
+@import "./base/scss/variables";
+@import "./base/scss/fonts";
+@import "./base/scss/responsive";
+@import "./base/scss/reset";
+@import "./base/scss/global";
+@import "./base/scss/mixins";
+
+@import "./pages/Home/Home";
+@import "./pages/Landing/Landing";
+@import "./pages/Landing/LandingForeground/LandingForeground";

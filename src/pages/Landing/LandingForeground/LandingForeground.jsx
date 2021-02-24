@@ -58,12 +58,12 @@ export function LandingForeground(props) {
     const [cDx, cDy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cDxAcc, p0.cDyAcc, p0.cDxVel, p0.cDyVel, web_react)
     const [cEx, cEy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cExAcc, p0.cEyAcc, p0.cExVel, p0.cEyVel, web_nodejs)
     const [cFx, cFy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cFxAcc, p0.cFyAcc, p0.cFxVel, p0.cFyVel, web_css)
-    const [dAx, dAy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dAxAcc, p0.dAyAcc, p0.dAxVel, p0.dAyVel, game_lol)
+    const [dAx, dAy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dAxAcc, p0.dAyAcc, p0.dAxVel, p0.dAyVel, game_blizzard)
     const [dBx, dBy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dBxAcc, p0.dByAcc, p0.dBxVel, p0.dByVel, game_ps1)
-    const [dCx, dCy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dCxAcc, p0.dCyAcc, p0.dCxVel, p0.dCyVel, game_blizzard)
+    const [dCx, dCy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dCxAcc, p0.dCyAcc, p0.dCxVel, p0.dCyVel, game_lol)
     const [eAx, eAy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eAxAcc, p0.eAyAcc, p0.eAxVel, p0.eAyVel, lang_python)
-    const [eBx, eBy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eBxAcc, p0.eByAcc, p0.eBxVel, p0.eByVel, lang_haskell)
-    const [eCx, eCy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eCxAcc, p0.eCyAcc, p0.eCxVel, p0.eCyVel, lang_js)
+    const [eBx, eBy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eBxAcc, p0.eByAcc, p0.eBxVel, p0.eByVel, lang_js)
+    const [eCx, eCy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eCxAcc, p0.eCyAcc, p0.eCxVel, p0.eCyVel, lang_haskell)
 
     const [bx, by, br] = drawCircle(ctx, p0.bx, p0.by, p0.br, p0.bd, counter + 180, pts.br)
     const [cx, cy, cr] = drawCircle(ctx, p0.cx, p0.cy, p0.cr, p0.cd, counter + 270, pts.cr)
@@ -283,10 +283,15 @@ function drawCircleSmall(ctx, r, quadrant, xAccList, yAccList, xVelList, yVelLis
   }
 
 
-  const x = newPositionMaybeBounce(xMin, xMax, xAccList, xVelList);
-  const y = newPositionMaybeBounce(yMin, yMax, yAccList, yVelList);
+  let x = newPositionMaybeBounce(xMin, xMax, xAccList, xVelList);
+  let y = newPositionMaybeBounce(yMin, yMax, yAccList, yVelList);
 
-  if (xAccList.length > 10000) {
+  if (x < xMin) {x = xMin};
+  if (x > xMax) {x = xMax};
+  if (y < yMin) {y = yMin};
+  if (y > yMax) {y = yMax};
+
+  if (xAccList.length > 100000) {
     xAccList.splice(0, 1000);
     yAccList.splice(0, 1000);
     xVelList.splice(0, 1000);

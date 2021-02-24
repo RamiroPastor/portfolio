@@ -42,68 +42,58 @@ export function LandingForeground(props) {
     ctx.strokeStyle = "indigo"
     ctx.lineWidth = 2
 
-    // drawCircleSmall(ctx, r, quadrant, xAccList, yAccList, xVelList, yVelList
-    const [bAx, bAy] = drawCircleSmall(ctx, p0.r0, "q1", p0.bAxAcc, p0.bAyAcc, p0.bAxVel, p0.bAyVel)
-    // const [bBx, bBy] = drawCircleSmall(ctx, p0.r0, "q1", p0.bBxAcc, p0.bByAcc, p0.bBxVel, p0.bByVel)
-    // const [bCx, bCy] = drawCircleSmall(ctx, p0.r0, "q1", p0.bCxAcc, p0.bCyAcc, p0.bCxVel, p0.bCyVel)
-    // const [bDx, bDy] = drawCircleSmall(ctx, p0.r0, "q1", p0.bDxAcc, p0.bDyAcc, p0.bDxVel, p0.bDyVel)
-    // const [cAx, cAy] = drawCircleSmall(ctx, p0.r0, "q2", p0.cAxAcc, p0.cAyAcc, p0.cAxVel, p0.cAyVel)
-    // const [cBx, cBy] = drawCircleSmall(ctx, p0.r0, "q2", p0.cBxAcc, p0.cByAcc, p0.cBxVel, p0.cByVel)
-    // const [cCx, cCy] = drawCircleSmall(ctx, p0.r0, "q2", p0.cCxAcc, p0.cCyAcc, p0.cCxVel, p0.cCyVel)
-    // const [cDx, cDy] = drawCircleSmall(ctx, p0.r0, "q2", p0.cDxAcc, p0.cDyAcc, p0.cDxVel, p0.cDyVel)
-    // const [cEx, cEy] = drawCircleSmall(ctx, p0.r0, "q2", p0.cExAcc, p0.cEyAcc, p0.cExVel, p0.cEyVel)
-    // const [cFx, cFy] = drawCircleSmall(ctx, p0.r0, "q2", p0.cFxAcc, p0.cFyAcc, p0.cFxVel, p0.cFyVel)
-    // const [dAx, dAy] = drawCircleSmall(ctx, p0.r0, "q3", p0.dAxAcc, p0.dAyAcc, p0.dAxVel, p0.dAyVel)
-    // const [dBx, dBy] = drawCircleSmall(ctx, p0.r0, "q3", p0.dBxAcc, p0.dByAcc, p0.dBxVel, p0.dByVel)
-    // const [dCx, dCy] = drawCircleSmall(ctx, p0.r0, "q3", p0.dCxAcc, p0.dCyAcc, p0.dCxVel, p0.dCyVel)
-    // const [eAx, eAy] = drawCircleSmall(ctx, p0.r0, "q4", p0.eAxAcc, p0.eAyAcc, p0.eAxVel, p0.eAyVel)
-    // const [eBx, eBy] = drawCircleSmall(ctx, p0.r0, "q4", p0.eBxAcc, p0.eByAcc, p0.eBxVel, p0.eByVel)
-    // const [eCx, eCy] = drawCircleSmall(ctx, p0.r0, "q4", p0.eCxAcc, p0.eCyAcc, p0.eCxVel, p0.eCyVel)
+    function drawCircleWithImage(ctx, r, q, xAcc, yAcc, xVel, yVel, img) {
+      const [x, y] = drawCircleSmall(ctx, r, q, xAcc, yAcc, xVel, yVel);
+      drawCenteredImage(ctx, img, x, y);
+      return [x, y]
+    }
 
-    drawCenteredImage(ctx, math_euler      , bAx, bAy);
-    // drawCenteredImage(ctx, math_homomorfism, bBx, bBy);
-    // drawCenteredImage(ctx, math_normal     , bCx, bCy);
-    // drawCenteredImage(ctx, math_settheory  , bDx, bDy);
-    // drawCenteredImage(ctx, web_css   , cAx, cAy);
-    // drawCenteredImage(ctx, web_html  , cBx, cBy);
-    // drawCenteredImage(ctx, web_svg   , cCx, cCy);
-    // drawCenteredImage(ctx, web_sass  , cDx, cDy);
-    // drawCenteredImage(ctx, web_react , cEx, cEy);
-    // drawCenteredImage(ctx, web_nodejs, cFx, cFy);
-    // drawCenteredImage(ctx, game_blizzard, dAx, dAy);
-    // drawCenteredImage(ctx, game_lol     , dBx, dBy);
-    // drawCenteredImage(ctx, game_ps1     , dCx, dCy);
-    // drawCenteredImage(ctx, lang_python , eAx, eAy);
-    // drawCenteredImage(ctx, lang_haskell, eBx, eBy);
-    // drawCenteredImage(ctx, lang_js     , eCx, eCy);
+    const [bAx, bAy] = drawCircleWithImage(ctx, p0.r0, "q1", p0.bAxAcc, p0.bAyAcc, p0.bAxVel, p0.bAyVel, math_homomorfism)
+    const [bBx, bBy] = drawCircleWithImage(ctx, p0.r0, "q1", p0.bBxAcc, p0.bByAcc, p0.bBxVel, p0.bByVel, math_normal)
+    const [bCx, bCy] = drawCircleWithImage(ctx, p0.r0, "q1", p0.bCxAcc, p0.bCyAcc, p0.bCxVel, p0.bCyVel, math_settheory)
+    const [bDx, bDy] = drawCircleWithImage(ctx, p0.r0, "q1", p0.bDxAcc, p0.bDyAcc, p0.bDxVel, p0.bDyVel, math_euler)
+    const [cAx, cAy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cAxAcc, p0.cAyAcc, p0.cAxVel, p0.cAyVel, web_html)
+    const [cBx, cBy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cBxAcc, p0.cByAcc, p0.cBxVel, p0.cByVel, web_svg)
+    const [cCx, cCy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cCxAcc, p0.cCyAcc, p0.cCxVel, p0.cCyVel, web_sass)
+    const [cDx, cDy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cDxAcc, p0.cDyAcc, p0.cDxVel, p0.cDyVel, web_react)
+    const [cEx, cEy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cExAcc, p0.cEyAcc, p0.cExVel, p0.cEyVel, web_nodejs)
+    const [cFx, cFy] = drawCircleWithImage(ctx, p0.r0, "q2", p0.cFxAcc, p0.cFyAcc, p0.cFxVel, p0.cFyVel, web_css)
+    const [dAx, dAy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dAxAcc, p0.dAyAcc, p0.dAxVel, p0.dAyVel, game_lol)
+    const [dBx, dBy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dBxAcc, p0.dByAcc, p0.dBxVel, p0.dByVel, game_ps1)
+    const [dCx, dCy] = drawCircleWithImage(ctx, p0.r0, "q3", p0.dCxAcc, p0.dCyAcc, p0.dCxVel, p0.dCyVel, game_blizzard)
+    const [eAx, eAy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eAxAcc, p0.eAyAcc, p0.eAxVel, p0.eAyVel, lang_python)
+    const [eBx, eBy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eBxAcc, p0.eByAcc, p0.eBxVel, p0.eByVel, lang_haskell)
+    const [eCx, eCy] = drawCircleWithImage(ctx, p0.r0, "q4", p0.eCxAcc, p0.eCyAcc, p0.eCxVel, p0.eCyVel, lang_js)
 
     const [bx, by, br] = drawCircle(ctx, p0.bx, p0.by, p0.br, p0.bd, counter + 180, pts.br)
     const [cx, cy, cr] = drawCircle(ctx, p0.cx, p0.cy, p0.cr, p0.cd, counter + 270, pts.cr)
     const [dx, dy, dr] = drawCircle(ctx, p0.dx, p0.dy, p0.dr, p0.dd, counter + 90 , pts.dr)
     const [ex, ey, er] = drawCircle(ctx, p0.ex, p0.ey, p0.er, p0.ed, counter + 0  , pts.er)
 
+
+    ctx.globalCompositeOperation = "destination-over";
+    joinCircles(ctx, bx, by, br, bAx, bAy, p0.r0)
+    joinCircles(ctx, bx, by, br, bBx, bBy, p0.r0)
+    joinCircles(ctx, bx, by, br, bCx, bCy, p0.r0)
+    joinCircles(ctx, bx, by, br, bDx, bDy, p0.r0)
+    joinCircles(ctx, cx, cy, cr, cAx, cAy, p0.r0)
+    joinCircles(ctx, cx, cy, cr, cBx, cBy, p0.r0)
+    joinCircles(ctx, cx, cy, cr, cCx, cCy, p0.r0)
+    joinCircles(ctx, cx, cy, cr, cDx, cDy, p0.r0)
+    joinCircles(ctx, cx, cy, cr, cEx, cEy, p0.r0)
+    joinCircles(ctx, cx, cy, cr, cFx, cFy, p0.r0)
+    joinCircles(ctx, dx, dy, dr, dAx, dAy, p0.r0)
+    joinCircles(ctx, dx, dy, dr, dBx, dBy, p0.r0)
+    joinCircles(ctx, dx, dy, dr, dCx, dCy, p0.r0)
+    joinCircles(ctx, ex, ey, er, eAx, eAy, p0.r0)
+    joinCircles(ctx, ex, ey, er, eBx, eBy, p0.r0)
+    joinCircles(ctx, ex, ey, er, eCx, eCy, p0.r0)
+    ctx.globalCompositeOperation = "source-over";
+
     ctx.beginPath()
     ctx.arc(p0.ax, p0.ay, p0.ar, 0, 2*Math.PI)
     ctx.fill()
-    ctx.stroke()
-
-    joinCircles(ctx, bx, by, br, bAx, bAy, p0.r0)
-    // joinCircles(ctx, bx, by, br, bBx, bBy, p0.r0)
-    // joinCircles(ctx, bx, by, br, bCx, bCy, p0.r0)
-    // joinCircles(ctx, bx, by, br, bDx, bDy, p0.r0)
-    // joinCircles(ctx, cx, cy, cr, cAx, cAy, p0.r0)
-    // joinCircles(ctx, cx, cy, cr, cBx, cBy, p0.r0)
-    // joinCircles(ctx, cx, cy, cr, cCx, cCy, p0.r0)
-    // joinCircles(ctx, cx, cy, cr, cDx, cDy, p0.r0)
-    // joinCircles(ctx, cx, cy, cr, cEx, cEy, p0.r0)
-    // joinCircles(ctx, cx, cy, cr, cFx, cFy, p0.r0)
-    // joinCircles(ctx, dx, dy, dr, dAx, dAy, p0.r0)
-    // joinCircles(ctx, dx, dy, dr, dBx, dBy, p0.r0)
-    // joinCircles(ctx, dx, dy, dr, dCx, dCy, p0.r0)
-    // joinCircles(ctx, ex, ey, er, eAx, eAy, p0.r0)
-    // joinCircles(ctx, ex, ey, er, eBx, eBy, p0.r0)
-    // joinCircles(ctx, ex, ey, er, eCx, eCy, p0.r0)
-    
+    ctx.stroke()    
 
     joinCircles(ctx, p0.ax, p0.ay, p0.ar, bx, by, br)
     joinCircles(ctx, p0.ax, p0.ay, p0.ar, cx, cy, cr)
@@ -130,6 +120,7 @@ export function LandingForeground(props) {
 
   useEffect( () => {
 
+
     const originPoints =
       { ax: 500, ay: 500, ar: 166
       , bx: 310, by: 310, br: 95, bd: 30
@@ -137,7 +128,7 @@ export function LandingForeground(props) {
       , dx: 310, dy: 690, dr: 95, dd: 30
       , ex: 690, ey: 690, er: 95, ed: 30
       , r0: 60
-      , bAx: 120, bAy: 360, bAxAcc: [0], bAyAcc: [0], bAxVel: [], bAyVel: []
+      , bAxAcc: [0], bAyAcc: [0], bAxVel: [], bAyVel: []
       , bBx: 120, bBy: 240, bBxAcc: [0], bByAcc: [0], bBxVel: [], bByVel: []
       , bCx: 240, bCy: 120, bCxAcc: [0], bCyAcc: [0], bCxVel: [], bCyVel: []
       , bDx: 360, bDy: 120, bDxAcc: [0], bDyAcc: [0], bDxVel: [], bDyVel: []
@@ -166,8 +157,8 @@ export function LandingForeground(props) {
 
     async function render(points) {
       const newPoints = draw(context, originPoints, counter, points)
-      counter += 2;
-      await new Promise(r => setTimeout(r, 50));
+      counter += 1;
+      await new Promise(r => setTimeout(r, 20));
       animationFrameId = window.requestAnimationFrame(() => render(newPoints))
     }
     render(originPoints)
@@ -247,49 +238,66 @@ function drawCircleSmall(ctx, r, quadrant, xAccList, yAccList, xVelList, yVelLis
 
   let xMin, xMax, yMin, yMax;
   
+  const min1 = 0   + r;
+  const min2 = 550 + r;
+  const max1 = 450 - r;
+  const max2 = 1000 - r;
 
   switch (quadrant) {
     case "q1":
-      xMin = 0 + r; xMax = 500 - r; yMin = 0 + r; yMax = 500 - r; break;
+      xMin = min1; xMax = max1; yMin = min1; yMax = max1; break;
     case "q2":
-      xMin = 500; xMax = 1000; yMin = 0; yMax = 500; break;
+      xMin = min2; xMax = max2; yMin = min1; yMax = max1; break;
     case "q3":
-      xMin = 0; xMax = 500; yMin = 500; yMax = 1000; break;
+      xMin = min1; xMax = max1; yMin = min2; yMax = max2; break;
     case "q4":
-      xMin = 500; xMax = 1000; yMin = 500; yMax = 1000; break;
+      xMin = min2; xMax = max2; yMin = min2; yMax = max2; break;
     default:
+      console.log("malformed quadrant name");
       break;
   }
 
   const sum = (s, n) => s + n 
 
-  const xAcc = Math.random() * (xMax - xMin) - (xMax - xMin)/2 + xMin;
-  const yAcc = Math.random() * (yMax - yMin) - (yMax - yMin)/2 + yMin;
-  xAccList.push(xAcc);
-  yAccList.push(yAcc);
-  xVelList.push(xAccList.reduce(sum));
-  yVelList.push(yAccList.reduce(sum));
+  function newPositionMaybeBounce(posMin, posMax, accList, velList) {
+    const acc = 0.2 * Math.random() - 0.1
+    accList.push(acc);
+    velList.push(accList.reduce(sum));
+    let pos = velList.reduce(sum);
+    if (pos < posMin) {
+      accList.pop();
+      velList.pop();
+      accList.push(1);
+      velList.push(accList.reduce(sum))
+      pos = velList.reduce(sum)
+    }
+    if (pos > posMax) {
+      accList.pop();
+      velList.pop();
+      accList.push(-1);
+      velList.push(accList.reduce(sum))
+      pos = velList.reduce(sum)
+    }
 
-  /* if (xAccList.length > 1200) {
-    xAccList.splice(0, 1);
-    yAccList.splice(0, 1);
-    xVelList.splice(0, 1);
-    yVelList.splice(0, 1);
-  } */
+    return pos
+  }
 
-  let x = xVelList.reduce(sum);
-  let y = yVelList.reduce(sum);
+
+  const x = newPositionMaybeBounce(xMin, xMax, xAccList, xVelList);
+  const y = newPositionMaybeBounce(yMin, yMax, yAccList, yVelList);
+
+  if (xAccList.length > 10000) {
+    xAccList.splice(0, 1000);
+    yAccList.splice(0, 1000);
+    xVelList.splice(0, 1000);
+    yVelList.splice(0, 1000);
+  }
+
   
-  if (x < xMin) {x = xMin}
-  if (x > xMax) {x = xMax}
-  if (y < yMin) {y = yMin}
-  if (y > yMax) {y = yMax}
-
-  console.log(x, y);
-
   ctx.beginPath()
   ctx.arc(x, y, r, 0, 2*Math.PI)
   ctx.fill()
   ctx.stroke()
   return [x, y]
 }
+

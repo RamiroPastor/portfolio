@@ -5,7 +5,10 @@
 @import "./base/scss/global";
 @import "./base/scss/mixins";
 
+@import "./core/Nav/Nav";
+
 @import "./pages/Home/Home";
 @import "./pages/Landing/Landing";
 @import "./pages/Landing/LandingBackground/LandingBackground";
 @import "./pages/Landing/LandingForeground/LandingForeground";
+@import "./pages/Wip/Wip";

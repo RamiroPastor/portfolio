@@ -1,0 +1,41 @@
+.Nav {
+  $h: 6rem;
+  display: flex;
+  justify-content: space-between;
+  width: 36rem;
+  height: $h;
+  padding: 0 2.2rem;
+  background-color: indigo;
+  border-radius: 500px;
+  &__link {
+    $color1: violet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: $h;
+    height: $h;
+    padding: 0.5rem;
+    color: $color1;
+    svg {
+      $w: 70%;
+      width: $w;
+      height: $w;
+      stroke: $color1;
+      fill: $color1;
+    }
+    &Text {
+      font-size: 1rem;
+    }
+    &--active {
+      $color2: white;
+      svg {
+        fill: $color2;
+        stroke: $color2;
+      }
+      .Nav__linkText {
+        color: $color2;
+      }
+    }
+  }
+}

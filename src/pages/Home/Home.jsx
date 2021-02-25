@@ -5,7 +5,11 @@ export function Home(props) {
   
   return(
     <div className="Home">
-      <h1>Home Works!</h1>  
+      <div className="Home__background">
+        <div className="Home__foreground">
+          <h1>Home works!</h1>
+        </div>
+      </div>
     </div>
   )
 }

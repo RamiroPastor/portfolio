@@ -2,9 +2,11 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import { Landing } from "../../pages/Landing/Landing";
-import { Home    } from "../../pages/Home/Home";
-import { Wip     } from "../../pages/Wip/Wip";
+import { Contact  } from "../../pages/Contact/Contact";
+import { Landing  } from "../../pages/Landing/Landing";
+import { Projects } from "../../pages/Projects/Projects";
+import { Home     } from "../../pages/Home/Home";
+import { Wip      } from "../../pages/Wip/Wip";
 
 
 export function Routes(props) {
@@ -21,7 +23,7 @@ export function Routes(props) {
       </Route>
 
       <Route path="/projects">
-        <Wip />
+        <Projects />
       </Route>
 
       <Route path="/cv">
@@ -29,7 +31,7 @@ export function Routes(props) {
       </Route>
 
       <Route path="/contact">
-        <Wip />
+        <Contact />
       </Route>
 
       <Route path="/" exact>

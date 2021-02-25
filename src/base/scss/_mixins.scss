@@ -31,5 +31,5 @@
 }
 
 @mixin textShadow($color) {
-  text-shadow: 1px 0 $color, -1px 0 $color, 0 1px $color, 0 -1px $color;
+  text-shadow: 2px 0 $color, -2px 0 $color, 0 2px $color, 0 -2px $color;
 }

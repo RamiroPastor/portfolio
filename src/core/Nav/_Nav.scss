@@ -7,6 +7,7 @@
   padding: 0 2.2rem;
   background-color: indigo;
   border-radius: 500px;
+  z-index: 10;
   &__link {
     $color1: violet;
     display: flex;
@@ -26,6 +27,7 @@
     }
     &Text {
       font-size: 1rem;
+      font-family: "Varela Round", sans-serif;
     }
     &--active {
       $color2: white;

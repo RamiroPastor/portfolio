@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="100" height="100">
+   <g id="layer1">
+      <path d="M 20 20 L 80 80" style="fill:none;stroke:tomato;stroke-width:16;stroke-opacity:1" />
+      <path d="M 20 80 L 80 20" style="fill:none;stroke:tomato;stroke-width:16;stroke-opacity:1" />
+   </g>
+</svg>

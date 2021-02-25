@@ -1,8 +1,13 @@
 
 import React from "react";
 
-import { Nav } from "../../core/Nav/Nav";
+import greenTickUrl from "../../assets/img/greenTick.svg";
+import redCrossUrl  from "../../assets/img/redX.svg";
+import { Nav }      from "../../core/Nav/Nav";
 
+
+const greenTick = <img alt="ok" src={greenTickUrl}/>
+const redCross  = <img alt="ko" src={redCrossUrl}/> 
 
 
 export function Home(props) {
@@ -36,20 +41,20 @@ export function Home(props) {
                 <div className="HomeMain__likes">
                   <h5>Aficiones:</h5>
                   <ul>
-                    <li>videojuegos</li>
-                    <li>ver vídeos de youtube</li>
-                    <li>escuchar música (clásica u otras)</li>
-                    <li>dormir y comer</li>
+                    <li>{greenTick} videojuegos</li>
+                    <li>{greenTick} ver vídeos de youtube</li>
+                    <li>{greenTick} escuchar música (clásica u otras)</li>
+                    <li>{greenTick} dormir y comer</li>
                   </ul>
                 </div>
                 <div className="HomeMain__dislikes">
                   <h5>Cosas que odio:</h5>
                   <ul>
-                    <li>hacer deporte</li>
-                    <li>comer sano</li>
-                    <li>madrugar</li>
-                    <li>PHP (mucho)</li>
-                    <li>Docker (un poco)</li>
+                    <li>{redCross} hacer deporte</li>
+                    <li>{redCross} comer sano</li>
+                    <li>{redCross} madrugar</li>
+                    <li>{redCross} PHP (mucho)</li>
+                    <li>{redCross} Docker (un poco)</li>
                   </ul>
                 </div>
               </section>

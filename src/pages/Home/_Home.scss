@@ -106,22 +106,41 @@
     }
     ul {
       list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include landscape {
+        align-items: stretch;
+      }
     }
     h5 {
       margin-bottom: 0.8rem;
     }
     li {
+      display: flex;
+      align-items: center;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
+    }
+    img {
+      display: none;
+      $x: 1rem;
+      width: $x;
+      height: $x;
+      margin-right: 0.6rem;
       @include landscape {
-        margin-left: 1.2rem;
+        display: inline;
       }
     }
   }
-  &__likes h5 {
-    color: mediumseagreen;
+  &__likes {
+    h5 {
+      color: mediumseagreen;
+    }
   }
-  &__dislikes h5 {
-    color: tomato;
+  &__dislikes {
+    h5 {
+      color: tomato;
+    }
   }
 }

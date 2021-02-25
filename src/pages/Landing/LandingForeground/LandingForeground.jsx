@@ -157,7 +157,7 @@ export function LandingForeground(props) {
 
     async function render(points) {
       const newPoints = draw(context, originPoints, counter, points)
-      counter += 1;
+      counter += 2;
       await new Promise(r => setTimeout(r, 20));
       animationFrameId = window.requestAnimationFrame(() => render(newPoints))
     }
@@ -292,10 +292,10 @@ function drawCircleSmall(ctx, r, quadrant, xAccList, yAccList, xVelList, yVelLis
   if (y > yMax) {y = yMax};
 
   if (xAccList.length > 10000) {
-    xAccList.splice(0, 100);
-    yAccList.splice(0, 100);
-    xVelList.splice(0, 100);
-    yVelList.splice(0, 100);
+    xAccList.splice(0, 1000);
+    yAccList.splice(0, 1000);
+    xVelList.splice(0, 1000);
+    yVelList.splice(0, 1000);
   }
 
   

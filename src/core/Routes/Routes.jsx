@@ -3,6 +3,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { Contact  } from "../../pages/Contact/Contact";
+import { Cv       } from "../../pages/Cv/Cv";
 import { Landing  } from "../../pages/Landing/Landing";
 import { Projects } from "../../pages/Projects/Projects";
 import { Home     } from "../../pages/Home/Home";
@@ -27,7 +28,7 @@ export function Routes(props) {
       </Route>
 
       <Route path="/cv">
-        <Wip />
+        <Cv />
       </Route>
 
       <Route path="/contact">

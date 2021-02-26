@@ -3,10 +3,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: $gray1;
+  @include customScrollbar;
 }
 
 button {
@@ -15,4 +13,16 @@ button {
 
 a {
   text-decoration: none;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }

@@ -1,0 +1,299 @@
+@use "sass:math";
+
+.Cv__background {
+  width: 100%;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
+    linear-gradient(to right, mediumturquoise, powderblue, aqua);
+  font-family: "Varela Round", sans-serif;
+  color: rgb(50, 50, 50);
+}
+
+.Cv {
+  $w: 4.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem 6rem 2rem;
+  background-image: url("../../assets/cv/mosaicPajarita.svg");
+  background-repeat: repeat;
+  background-size: $w ($w * math.sqrt(3));
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv__section {
+  background-color: white;
+  margin-top: 6rem;
+  padding: 4rem;
+  min-width: 30rem;
+  width: 100%;
+  max-width: 80rem;
+  border: 3px solid rgb(50, 50, 50);
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.Cv__personal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include landscape {
+    flex-direction: row;
+  }
+}
+
+.Cv__myPhoto {
+  border: 2px solid rgb(50, 50, 50);
+  border-radius: 1000px;
+  --x: 20rem;
+  height: var(--x);
+  width: var(--x);
+  margin-bottom: 3rem;
+  @include landscape {
+    margin-bottom: 0;
+    margin-right: 5rem;
+  }
+}
+
+.Cv__personalInfo {
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  img {
+    --x: 2rem;
+    width: var(--x);
+    height: var(--x);
+    margin-right: 1.5rem;
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv__sectionHeader {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: tomato;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.Cv__study {
+  display: flex;
+  margin-top: 4rem;
+  flex-direction: column;
+  img {
+    align-self: center;
+    --x: 5rem;
+    height: var(--x);
+    width: var(--x);
+    margin-bottom: 2rem;
+  }
+  @include landscape {
+    flex-direction: row;
+    img {
+      margin-bottom: 0;
+      margin-right: 3.5rem;
+    }
+  }
+}
+
+.Cv__studyInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  h4 {
+    flex-grow: 1;
+  }
+  span {
+    margin-left: 0.4rem;
+    font-size: 1.1rem;
+    text-align: end;
+  }
+  p {
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv__work {
+  margin-top: 4rem;
+  div {
+    display: flex;
+  }
+  h4 {
+    flex-grow: 1;
+    margin: 0;
+  }
+  span {
+    font-size: 1.1rem;
+    text-align: end;
+  }
+  em {
+    font-size: 1.2rem;
+    font-style: normal;
+  }
+  p {
+    margin: 1.2rem 0 0 0;
+    font-size: 1.4rem;
+    color: rgb(120, 120, 120);
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include landscape {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  &Column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 24rem;
+    font-size: 1.4rem;
+  }
+  &Column--center {
+    margin: 2rem 0;
+    @include landscape {
+      margin: 0 5rem;
+    }
+  }
+}
+
+.Cv__skills {
+  list-style-type: none;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  img {
+    --x: 1.8rem;
+    height: var(--x);
+    width: var(--x);
+    margin-right: 1rem;
+    object-fit: scale-down;
+  }
+  span {
+    flex-grow: 1;
+  }
+  em {
+    font-style: normal;
+    cursor: default;
+  }
+}
+
+.Cv__lowSkill {
+  color: red;
+}
+
+.Cv__mediumSkill {
+  color: orange;
+}
+
+.Cv__highSkill {
+  color: green;
+}
+
+.Cv__langs {
+  list-style-type: none;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  img {
+    border-radius: 200px;
+    --x: 2.5rem;
+    height: var(--x);
+    width: var(--x);
+    margin-right: 1.5rem;
+  }
+  p {
+    margin: 0.3rem 0 0 0;
+    font-size: 1rem;
+  }
+}
+
+.Cv__social {
+  list-style-type: none;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  img {
+    --x: 2.5rem;
+    height: var(--x);
+    width: var(--x);
+    margin-right: 1.5rem;
+  }
+  span {
+    flex-grow: 1;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(50, 50, 50);
+    width: 12rem;
+    display: flex;
+    transition: all 0.5s ease;
+    &:hover {
+      color: royalblue;
+      width: 15rem;
+    }
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv__callToAction {
+  margin: 8rem;
+  padding: 3rem;
+  text-decoration: none;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: limegreen;
+  border: 5px solid limegreen;
+  border-radius: 15rem;
+  background-color: white;
+  transition: all 1s;
+  &:hover {
+    color: white;
+    background-color: limegreen;
+    transform: translateY(-2rem);
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.Cv__footer {
+  background-color: teal;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    font-size: 1rem;
+    color: white;
+    width: 80rem;
+    margin-bottom: -0.5rem;
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ------------------------------------------------------------ */

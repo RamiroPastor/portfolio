@@ -8,12 +8,19 @@ import langEsImgUrl         from "../../assets/cv/langES.png";
 import langFrImgUrl         from "../../assets/cv/langFR.svg";
 import locationImgUrl       from "../../assets/cv/location.svg";
 import myPhotoImgUrl        from "../../assets/cv/MyPhoto.jpg";
+import skillAngularImgUrl   from "../../assets/cv/skillAngular.png";
 import skillCssImgUrl       from "../../assets/cv/skillCss.png";
+import skillDockerImgUrl    from "../../assets/cv/skillDocker.png";
+import skillGitImgUrl       from "../../assets/cv/skillGit.png";
 import skillHaskellImgUrl   from "../../assets/cv/skillHaskell.png";
 import skillHtmlImgUrl      from "../../assets/cv/skillHtml.png";
 import skillJsImgUrl        from "../../assets/cv/skillJavascript.svg";
 import skillMatlabImgUrl    from "../../assets/cv/skillMatlab.png";
+import skillMongoImgUrl     from "../../assets/cv/skillMongo.png";
+import skillMysqlImgUrl     from "../../assets/cv/skillMysql.png";
+import skillNodejsImgUrl    from "../../assets/cv/skillNodejs.png";
 import skillPythonImgUrl    from "../../assets/cv/skillPython.png";
+import skillReactImgUrl     from "../../assets/cv/skillReact.png";
 import skillSvgImgUrl       from "../../assets/cv/skillSvg.png";
 import skillTopologyImgUrl  from "../../assets/cv/skillTopologia.png";
 import socialGithubImgUrl   from "../../assets/cv/socialGithub.png";
@@ -35,12 +42,19 @@ const langEsImg         = <img alt="" title=""                src={langEsImgUrl}
 const langFrImg         = <img alt="" title=""                src={langFrImgUrl}/>;
 const locationImg       = <img alt="" title="Ubicación"       src={locationImgUrl}/>;
 const myPhotoImg        = <img alt="" className="Cv__myPhoto" src={myPhotoImgUrl}/>;
+const skillAngularImg   = <img alt="" title=""                src={skillAngularImgUrl}/>;
 const skillCssImg       = <img alt="" title=""                src={skillCssImgUrl}/>;
+const skillDockerImg    = <img alt="" title=""                src={skillDockerImgUrl}/>;
+const skillGitImg       = <img alt="" title=""                src={skillGitImgUrl}/>;
 const skillHaskellImg   = <img alt="" title=""                src={skillHaskellImgUrl}/>;
 const skillHtmlImg      = <img alt="" title=""                src={skillHtmlImgUrl}/>;
 const skillJsImg        = <img alt="" title=""                src={skillJsImgUrl}/>;
 const skillMatlabImg    = <img alt="" title=""                src={skillMatlabImgUrl}/>;
+const skillMongoImg     = <img alt="" title=""                src={skillMongoImgUrl}/>;
+const skillMysqlImg     = <img alt="" title=""                src={skillMysqlImgUrl}/>;
+const skillNodejsImg    = <img alt="" title=""                src={skillNodejsImgUrl}/>;
 const skillPythonImg    = <img alt="" title=""                src={skillPythonImgUrl}/>;
+const skillReactImg     = <img alt="" title=""                src={skillReactImgUrl}/>;
 const skillSvgImg       = <img alt="" title=""                src={skillSvgImgUrl}/>;
 const skillTopologyImg  = <img alt="" title=""                src={skillTopologyImgUrl}/>;
 const socialGithubImg   = <img alt="" title=""                src={socialGithubImgUrl}/>;
@@ -241,6 +255,13 @@ export function Cv(props) {
             {skill(skillCssImg     , "Css"       , 5)}
             {skill(skillSvgImg     , "SVG"       , 4)}
             {skill(skillJsImg      , "Javascript", 4)}
+            {skill(skillAngularImg , "Angular"   , 1)}
+            {skill(skillReactImg   , "React"     , 3)}
+            {skill(skillNodejsImg  , "Nodejs"    , 3)}
+            {skill(skillGitImg     , "Git"       , 2)}
+            {skill(skillDockerImg  , "Docker"    , 3)}
+            {skill(skillMysqlImg   , "Mysql"     , 1)}
+            {skill(skillMongoImg   , "MongoDB"   , 3)}
           </ul>
         </div>
         <div className="Cv__bottomColumn Cv__bottomColumn--center">

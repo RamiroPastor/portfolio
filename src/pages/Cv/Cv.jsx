@@ -292,23 +292,7 @@ export function Cv(props) {
         <span>ramir659@gmail.com</span>
       </a>
 
-    </article>
-
-
-    <footer className="Cv__footer">
-      <div>
-        <p>Copyright © Ramiro Pastor Martín. Todos los derechos reservados.</p>
-        <p>
-            Todo lo que hay en esta página web, 
-            excepto las imágenes y logos, 
-            es producción propia. 
-            Especialmente el mosaico del fondo, 
-            con tesela base <em>pajarita nazarí</em>,
-            inspirado en la Alhambra de Granada.
-        </p>
-      </div>
-    </footer>
-    
+    </article>    
     </div>
   )
 }

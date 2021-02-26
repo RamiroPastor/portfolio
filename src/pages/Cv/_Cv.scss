@@ -319,24 +319,4 @@
   }
 }
 
-.Cv__footer {
-  background-color: teal;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include printer {
-    display: none;
-  }
-  div {
-    font-size: 1rem;
-    color: white;
-    width: 80rem;
-    margin-bottom: -0.5rem;
-  }
-  p {
-    margin-bottom: 0.5rem;
-  }
-}
-
 /* ------------------------------------------------------------ */

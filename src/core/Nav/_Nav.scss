@@ -8,6 +8,9 @@
   background-color: indigo;
   border-radius: 500px;
   z-index: 10;
+  @include printer {
+    display: none;
+  }
   &__link {
     $color1: violet;
     display: flex;

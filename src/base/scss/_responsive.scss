@@ -21,3 +21,9 @@ $break3: 992px;
     @content;
   }
 }
+
+@mixin printer {
+  @media print {
+    @content;
+  }
+}

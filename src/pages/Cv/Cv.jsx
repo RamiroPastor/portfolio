@@ -33,6 +33,7 @@ import upgradehubImgUrl     from "../../assets/cv/upgradehub.png";
 import utretchImgUrl        from "../../assets/cv/utretch.png";
 import whatsappImgUrl       from "../../assets/cv/whatsapp.svg";
 
+import { Nav } from "../../core/Nav/Nav";
 
 
 const cambridgeImg      = <img alt="" title=""                src={cambridgeImgUrl}/>;
@@ -165,6 +166,8 @@ export function Cv(props) {
     <div className="Cv__background">
     <article className="Cv">
 
+      <Nav />
+
       <section className="Cv__section Cv__personal">
         {myPhotoImg}
         <div>
@@ -194,46 +197,39 @@ export function Cv(props) {
       <section className="Cv__section">
         <h3 className="Cv__sectionHeader">Estudios y Certificaciones</h3>
         {studies(
-          stmichaelsImg,
-          "Primaria, Secundaria y Bachillerato",
-          "1995 - 2008",
-          "Colegio St.Michaels School, Boadilla del Monte"
-          )}
-        {studies(
-          cambridgeImg,
-          "Certificate of Proficiency in English",
-          "2007 - 2008",
-          "Cambridge University"
-          )}
-        {studies(
-          ucmImg,
-          "Grado en Matemáticas",
-          "2008 - 2017",
-          "Universidad Complutense de Madrid"
-          )}
+          upgradehubImg,
+          "Bootcamp Programador Web Fullstack",
+          "2020 - 2021",
+          "Upgrade Hub"
+        )}
         {studies(
           utretchImg,
           "Applied Functional Programming in Haskell",
           "agosto 2017",
           "Utretch University, Utretch, Países Bajos"
-          )}
+        )}
         {studies(
-          upgradehubImg,
-          "Bootcamp Programador Web Fullstack",
-          "2020 - 2021",
-          "Upgrade Hub"
-          )}
+          ucmImg,
+          "Grado en Matemáticas",
+          "2008 - 2017",
+          "Universidad Complutense de Madrid"
+        )}
+        {studies(
+          cambridgeImg,
+          "Certificate of Proficiency in English",
+          "2007 - 2008",
+          "Cambridge University"
+        )}
+        {studies(
+          stmichaelsImg,
+          "Primaria, Secundaria y Bachillerato",
+          "1995 - 2008",
+          "Colegio St.Michaels School, Boadilla del Monte"
+        )}
       </section>
 
       <section className="Cv__section">
         <h3 className="Cv__sectionHeader">Experiencia Laboral</h3>
-        {work(
-          "Profesor clases particulares",
-          "2010 - 2012",
-          "Academia Majadahonda",
-          `Profesor particular para niños y niñas de ESO y bachillerato,
-          principalmente para la asignatura de Matemáticas`
-        )}
         {work(
           "Programador backend con Haskell",
           "2017",
@@ -241,27 +237,34 @@ export function Cv(props) {
           `Programador web backend con Haskell para una startup en fase
           de incubación de fantasy football, en régimen de summer internship`
         )}
+        {work(
+          "Profesor clases particulares",
+          "2010 - 2012",
+          "Academia Majadahonda",
+          `Profesor particular para niños y niñas de ESO y bachillerato,
+          principalmente para la asignatura de Matemáticas`
+        )}
       </section>
 
       <section className="Cv__section Cv__bottom">
         <div className="Cv__bottomColumn">
           <h3 className="Cv__sectionHeader">Destrezas</h3>
           <ul className="Cv__skills">
-            {skill(skillTopologyImg, "Topología" , 4)}
-            {skill(skillHaskellImg , "Haskell"   , 3)}
-            {skill(skillPythonImg  , "Python"    , 2)}
-            {skill(skillMatlabImg  , "Matlab"    , 1)}
-            {skill(skillHtmlImg    , "HTML"      , 4)}
-            {skill(skillCssImg     , "Css"       , 5)}
-            {skill(skillSvgImg     , "SVG"       , 4)}
-            {skill(skillJsImg      , "Javascript", 4)}
-            {skill(skillAngularImg , "Angular"   , 1)}
-            {skill(skillReactImg   , "React"     , 3)}
-            {skill(skillNodejsImg  , "Nodejs"    , 3)}
-            {skill(skillGitImg     , "Git"       , 2)}
-            {skill(skillDockerImg  , "Docker"    , 3)}
-            {skill(skillMysqlImg   , "Mysql"     , 1)}
-            {skill(skillMongoImg   , "MongoDB"   , 3)}
+            {skill(skillTopologyImg, "Topología"         , 4)}
+            {skill(skillHaskellImg , "Haskell"           , 3)}
+            {skill(skillPythonImg  , "Python"            , 2)}
+            {skill(skillMatlabImg  , "Matlab"            , 1)}
+            {skill(skillHtmlImg    , "HTML"              , 4)}
+            {skill(skillCssImg     , "Css"               , 5)}
+            {skill(skillSvgImg     , "SVG"               , 4)}
+            {skill(skillJsImg      , "Javascript"        , 4)}
+            {skill(skillAngularImg , "Angular"           , 1)}
+            {skill(skillReactImg   , "React"             , 3)}
+            {skill(skillNodejsImg  , "Nodejs"            , 3)}
+            {skill(skillGitImg     , "Git"               , 2)}
+            {skill(skillDockerImg  , "Docker"            , 3)}
+            {skill(skillMysqlImg   , "Mysql + PostgreSQL", 1)}
+            {skill(skillMongoImg   , "MongoDB"           , 3)}
           </ul>
         </div>
         <div className="Cv__bottomColumn Cv__bottomColumn--center">
@@ -285,6 +288,8 @@ export function Cv(props) {
 
       <a className="Cv__callToAction" href="mailto:ramir659@gmail.com">
         ¡Contáctame!
+        <br/>
+        <span>ramir659@gmail.com</span>
       </a>
 
     </article>

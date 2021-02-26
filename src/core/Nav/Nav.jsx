@@ -29,7 +29,7 @@ export function Nav(props) {
         <span className="Nav__linkText">projects</span>
       </NavLink>
 
-      <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/cv" target="_blank">
+      <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/cv">
         {carnetSvg}
         <span className="Nav__linkText">curriculum</span>
       </NavLink>

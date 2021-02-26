@@ -41,18 +41,18 @@ export function Home(props) {
                 <div className="HomeMain__likes">
                   <h5>Aficiones:</h5>
                   <ul>
-                    <li>{greenTick} videojuegos</li>
-                    <li>{greenTick} ver vídeos de youtube</li>
-                    <li>{greenTick} escuchar música (clásica u otras)</li>
-                    <li>{greenTick} dormir y comer</li>
+                    <li>{greenTick} Videojuegos</li>
+                    <li>{greenTick} Ver vídeos de youtube</li>
+                    <li>{greenTick} Escuchar música (clásica u otras)</li>
+                    <li>{greenTick} Dormir y comer</li>
                   </ul>
                 </div>
                 <div className="HomeMain__dislikes">
                   <h5>Cosas que odio:</h5>
                   <ul>
-                    <li>{redCross} hacer deporte</li>
-                    <li>{redCross} comer sano</li>
-                    <li>{redCross} madrugar</li>
+                    <li>{redCross} Hacer deporte</li>
+                    <li>{redCross} Comer sano</li>
+                    <li>{redCross} Madrugar</li>
                     <li>{redCross} PHP (mucho)</li>
                     <li>{redCross} Docker (un poco)</li>
                   </ul>

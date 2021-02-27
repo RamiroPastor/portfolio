@@ -9,7 +9,9 @@ export function Learning(props) {
   
   return(
     <div className="Learning">
-      <Nav t={props.t}/>
+      <div className="Learning__foreground">
+        <Nav t={props.t}/>
+      </div>
     </div>
   )
 }

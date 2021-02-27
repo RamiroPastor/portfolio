@@ -10,6 +10,8 @@ export function Contact(props) {
   
   return(
     <div className="Contact">
+      <div className="Contact__background Contact__background--left"></div>
+      <div className="Contact__background Contact__background--right"></div>
       <div className="Contact__foreground">
         <Nav t={props.t}/>
         <div className="Contact__main">

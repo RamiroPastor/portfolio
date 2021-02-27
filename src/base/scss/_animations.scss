@@ -1,0 +1,17 @@
+@keyframes rollingBackgroundToRight {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 1000% 50%;
+  }
+}
+
+@keyframes rollingBackgroundToLeft {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: -1000% 50%;
+  }
+}

@@ -16,27 +16,27 @@ export function Routes(props) {
     <Switch>
 
       <Route path="/home">
-        <Home />
+        <Home t={props.t}/>
       </Route>
 
       <Route path="/learning">
-        <Wip />
+        <Wip t={props.t}/>
       </Route>
 
       <Route path="/projects">
-        <Projects />
+        <Projects t={props.t}/>
       </Route>
 
       <Route path="/cv">
-        <Cv />
+        <Cv t={props.t}/>
       </Route>
 
       <Route path="/contact">
-        <Contact />
+        <Contact t={props.t}/>
       </Route>
 
       <Route path="/" exact>
-        <Landing />
+        <Landing/>
       </Route>
 
       <Route path="/">

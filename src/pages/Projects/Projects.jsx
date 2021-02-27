@@ -9,7 +9,7 @@ export function Projects(props) {
   
   return(
     <div className="Projects">
-      <Nav/>
+      <Nav t={props.t}/>
     </div>
   )
 }

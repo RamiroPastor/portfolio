@@ -16,27 +16,27 @@ export function Nav(props) {
 
       <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/home">
         {homeSvg}
-        <span className="Nav__linkText">home</span>
+        <span className="Nav__linkText">{props.t("home")}</span>
       </NavLink>
 
       <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/learning">
         {bookSvg}
-        <span className="Nav__linkText">learning</span>
+        <span className="Nav__linkText">{props.t("learning")}</span>
       </NavLink>
 
       <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/projects">
         {jobSvg}
-        <span className="Nav__linkText">projects</span>
+        <span className="Nav__linkText">{props.t("projects")}</span>
       </NavLink>
 
       <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/cv">
         {carnetSvg}
-        <span className="Nav__linkText">curriculum</span>
+        <span className="Nav__linkText">{props.t("curriculum")}</span>
       </NavLink>
 
       <NavLink className="Nav__link" activeClassName="Nav__link--active" to="/contact">
         {envelopeSvg}
-        <span className="Nav__linkText">contact</span>
+        <span className="Nav__linkText">{props.t("contact")}</span>
       </NavLink>
 
     </nav>

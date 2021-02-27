@@ -41,7 +41,7 @@ const emailImg          = <img alt="" title="Email"           src={emailImgUrl}/
 const langEnImg         = <img alt="" title=""                src={langEnImgUrl}/>;
 const langEsImg         = <img alt="" title=""                src={langEsImgUrl}/>;
 const langFrImg         = <img alt="" title=""                src={langFrImgUrl}/>;
-const locationImg       = <img alt="" title="Ubicación"       src={locationImgUrl}/>;
+const locationImg       = <img alt="" title="Location"        src={locationImgUrl}/>;
 const myPhotoImg        = <img alt="" className="Cv__myPhoto" src={myPhotoImgUrl}/>;
 const skillAngularImg   = <img alt="" title=""                src={skillAngularImgUrl}/>;
 const skillCssImg       = <img alt="" title=""                src={skillCssImgUrl}/>;
@@ -66,7 +66,7 @@ const stmichaelsImg     = <img alt="" title=""                src={stmichaelsImg
 const ucmImg            = <img alt="" title=""                src={ucmImgUrl}/>;
 const upgradehubImg     = <img alt="" title=""                src={upgradehubImgUrl}/>;
 const utretchImg        = <img alt="" title=""                src={utretchImgUrl}/>;
-const whatsappImg       = <img alt="" title="Teléfono"        src={whatsappImgUrl}/>;
+const whatsappImg       = <img alt="" title="Phone number"    src={whatsappImgUrl}/>;
 
 
 
@@ -166,18 +166,16 @@ export function Cv(props) {
     <div className="Cv__background">
     <article className="Cv">
 
-      <Nav />
+      <Nav t={props.t}/>
 
       <section className="Cv__section Cv__personal">
         {myPhotoImg}
         <div>
             <h1>Ramiro Pastor Martín</h1>
             <h5>
-                Me gusta la Programación Funcional con Haskell 
-                y el desarrollo web, especialmente la parte gráfica 
-                destinada a la interacción con el usuario (UX/UI y frontend).
-                <br/>
-                También me gustan las matemáticas y los videojuegos.
+              {props.t("cvDesc1")}
+              <br/>
+              {props.t("cvDesc2")}
             </h5>
             <div className="Cv__personalInfo">
                 {emailImg}
@@ -185,20 +183,20 @@ export function Cv(props) {
             </div>
             <div className="Cv__personalInfo">
                 {whatsappImg}
-                <span>659687162</span>
+                <span>+34 659687162</span>
             </div>
             <div className="Cv__personalInfo">
                 {locationImg}
-                <span>Boadilla del Monte, Madrid, España</span>
+                <span>{props.t("cvLocation")}</span>
             </div>
         </div>
       </section>
 
       <section className="Cv__section">
-        <h3 className="Cv__sectionHeader">Estudios y Certificaciones</h3>
+        <h3 className="Cv__sectionHeader">{props.t("studies")}</h3>
         {studies(
           upgradehubImg,
-          "Bootcamp Programador Web Fullstack",
+          props.t("bootcamp"),
           "2020 - 2021",
           "Upgrade Hub"
         )}
@@ -206,11 +204,11 @@ export function Cv(props) {
           utretchImg,
           "Applied Functional Programming in Haskell",
           "agosto 2017",
-          "Utretch University, Utretch, Países Bajos"
+          props.t("utretchUni")
         )}
         {studies(
           ucmImg,
-          "Grado en Matemáticas",
+          props.t("mathsDegree"),
           "2008 - 2017",
           "Universidad Complutense de Madrid"
         )}
@@ -222,35 +220,33 @@ export function Cv(props) {
         )}
         {studies(
           stmichaelsImg,
-          "Primaria, Secundaria y Bachillerato",
+          props.t("basicEducation"),
           "1995 - 2008",
-          "Colegio St.Michaels School, Boadilla del Monte"
+          props.t("stMichaels")
         )}
       </section>
 
       <section className="Cv__section">
-        <h3 className="Cv__sectionHeader">Experiencia Laboral</h3>
+        <h3 className="Cv__sectionHeader">{props.t("workExperience")}</h3>
         {work(
-          "Programador backend con Haskell",
+          props.t("workExp2_title"),
           "2017",
           "Pickmister.com",
-          `Programador web backend con Haskell para una startup en fase
-          de incubación de fantasy football, en régimen de summer internship`
+          props.t("workExp2_desc")
         )}
         {work(
-          "Profesor clases particulares",
+          props.t("workExp1_title"),
           "2010 - 2012",
-          "Academia Majadahonda",
-          `Profesor particular para niños y niñas de ESO y bachillerato,
-          principalmente para la asignatura de Matemáticas`
+          props.t("workExp1_location"),
+          props.t("workExp1_desc")
         )}
       </section>
 
       <section className="Cv__section Cv__bottom">
         <div className="Cv__bottomColumn">
-          <h3 className="Cv__sectionHeader">Destrezas</h3>
+          <h3 className="Cv__sectionHeader">{props.t("skills")}</h3>
           <ul className="Cv__skills">
-            {skill(skillTopologyImg, "Topología"         , 4)}
+            {skill(skillTopologyImg, props.t("topology") , 4)}
             {skill(skillHaskellImg , "Haskell"           , 3)}
             {skill(skillPythonImg  , "Python"            , 2)}
             {skill(skillMatlabImg  , "Matlab"            , 1)}
@@ -268,15 +264,15 @@ export function Cv(props) {
           </ul>
         </div>
         <div className="Cv__bottomColumn Cv__bottomColumn--center">
-          <h3 className="Cv__sectionHeader">Idiomas</h3>
+          <h3 className="Cv__sectionHeader">{props.t("languages")}</h3>
           <ul className="Cv__langs">
-            {language(langEsImg, "Español", "Nativo")}
-            {language(langEnImg, "Inglés" , "Profesional")}
-            {language(langFrImg, "Francés", "Principiante")}
+            {language(langEsImg, props.t("spanish"), props.t("native"))}
+            {language(langEnImg, props.t("english"), props.t("professional"))}
+            {language(langFrImg, props.t("french") , props.t("beginner"))}
           </ul>
         </div>
         <div className="Cv__bottomColumn">
-          <h3 className="Cv__sectionHeader">Perfiles sociales</h3>
+          <h3 className="Cv__sectionHeader">{props.t("social")}</h3>
           <ul className="Cv__social">
             {social(socialSoImg      , "Stackoverflow", "https://stackoverflow.com/users/3927886"                    )}
             {social(socialGithubImg  , "Github"       , "https://github.com/RamiroPastor"                            )}
@@ -287,7 +283,7 @@ export function Cv(props) {
       </section>
 
       <a className="Cv__callToAction" href="mailto:ramir659@gmail.com">
-        ¡Contáctame!
+        {props.t("contactMe")}
         <br/>
         <span>ramir659@gmail.com</span>
       </a>

@@ -1,0 +1,34 @@
+.LangSelector {
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 5;
+  @include printer {
+    display: none;
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: indigo;
+    border-radius: 500px;
+  }
+  &__button {
+    $x: 2.4rem;
+    width: $x;
+    height: $x;
+    margin: 0.3rem 0.2rem;
+    border: none;
+    background-color: transparent;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100px;
+    }
+  }
+}

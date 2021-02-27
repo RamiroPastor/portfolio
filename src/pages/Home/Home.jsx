@@ -20,7 +20,7 @@ export function Home(props) {
           <main className="HomeMain">
 
             <h3 className="HomeMain__subtitle">
-              Bienvenido/a a la página personal de
+              {props.t("welcome")}
             </h3>
             <h1 className="HomeMain__title">
               Ramiro Pastor Martín
@@ -28,33 +28,33 @@ export function Home(props) {
 
             <article className="HomeMain__content">
               <section className="HomeMain__description">
-                <p>Soy afable, pero introvertido</p>
-                <p>Soy creativo y un poco perezoso, pero trabajo duro cuando me apasiono</p>
-                <p>Soy lento en aprender, porque intento entender antes que memorizar</p>
+                <p>{props.t("imNice")}</p>
+                <p>{props.t("imLazy")}</p>
+                <p>{props.t("imSlow")}</p>
                 <i>
-                  —Doctor, tengo todo el cuerpo cubierto de pelo. ¿Qué padezco?
+                  {props.t("jokeLine1")}
                   <br/>
-                  —Padece uzté un ozito.
+                  {props.t("jokeLine2")}
                 </i>
               </section>
               <section className="HomeMain__likesAndDislikes">
                 <div className="HomeMain__likes">
                   <h5>Aficiones:</h5>
                   <ul>
-                    <li>{greenTick} Videojuegos</li>
-                    <li>{greenTick} Ver vídeos de youtube</li>
-                    <li>{greenTick} Escuchar música (clásica u otras)</li>
-                    <li>{greenTick} Dormir y comer</li>
+                    <li>{greenTick} {props.t("videogames")}</li>
+                    <li>{greenTick} {props.t("youtubeVideos")}</li>
+                    <li>{greenTick} {props.t("music")}</li>
+                    <li>{greenTick} {props.t("sleepAndEat")}</li>
                   </ul>
                 </div>
                 <div className="HomeMain__dislikes">
-                  <h5>Cosas que odio:</h5>
+                  <h5>{props.t("dislikes")}</h5>
                   <ul>
-                    <li>{redCross} Hacer deporte</li>
-                    <li>{redCross} Comer sano</li>
-                    <li>{redCross} Madrugar</li>
-                    <li>{redCross} PHP (mucho)</li>
-                    <li>{redCross} Docker (un poco)</li>
+                    <li>{redCross} {props.t("sports")}</li>
+                    <li>{redCross} {props.t("healthyFood")}</li>
+                    <li>{redCross} {props.t("earlyMornings")}</li>
+                    <li>{redCross} {props.t("dislikePHP")}</li>
+                    <li>{redCross} {props.t("dislikeDocker")}</li>
                   </ul>
                 </div>
               </section>
@@ -62,7 +62,7 @@ export function Home(props) {
 
           </main>
 
-          <Nav/>
+          <Nav t={props.t}/>
 
         </div>
       </div>

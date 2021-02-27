@@ -48,6 +48,9 @@
     cursor: default;
     font-size: 5rem;
     @include textShadow($gray1);
+    &:first-letter {
+      text-transform: capitalize;
+    }
   }
   &__email {
     display: flex;

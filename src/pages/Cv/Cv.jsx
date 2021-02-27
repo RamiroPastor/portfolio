@@ -31,6 +31,7 @@ import stmichaelsImgUrl     from "../../assets/cv/stmichaels.png";
 import ucmImgUrl            from "../../assets/cv/ucm.png";
 import upgradehubImgUrl     from "../../assets/cv/upgradehub.png";
 import utretchImgUrl        from "../../assets/cv/utretch.png";
+import webImgUrl            from "../../assets/cv/web.svg";
 import whatsappImgUrl       from "../../assets/cv/whatsapp.svg";
 
 import { Nav } from "../../core/Nav/Nav";
@@ -66,6 +67,7 @@ const stmichaelsImg     = <img alt="" title=""                src={stmichaelsImg
 const ucmImg            = <img alt="" title=""                src={ucmImgUrl}/>;
 const upgradehubImg     = <img alt="" title=""                src={upgradehubImgUrl}/>;
 const utretchImg        = <img alt="" title=""                src={utretchImgUrl}/>;
+const webImg            = <img alt="" title="Personal site"   src={webImgUrl}/>;
 const whatsappImg       = <img alt="" title="Phone number"    src={whatsappImgUrl}/>;
 
 
@@ -188,6 +190,10 @@ export function Cv(props) {
             <div className="Cv__personalInfo">
                 {locationImg}
                 <span>{props.t("cvLocation")}</span>
+            </div>
+            <div className="Cv__personalInfo">
+                {webImg}
+                <a href="https://ramiropastor.es">https://ramiropastor.es</a>
             </div>
         </div>
       </section>

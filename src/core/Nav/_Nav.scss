@@ -32,14 +32,24 @@
       font-size: 1rem;
       font-family: "Varela Round", sans-serif;
     }
-    &--active {
-      $color2: white;
+    &:hover {
+      $color2: lightpink;
       svg {
         fill: $color2;
         stroke: $color2;
       }
       .Nav__linkText {
         color: $color2;
+      }
+    }
+    &--active {
+      $color3: white !important;
+      svg {
+        fill: $color3;
+        stroke: $color3;
+      }
+      .Nav__linkText {
+        color: $color3;
       }
     }
   }

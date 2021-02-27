@@ -6,7 +6,7 @@ import { LandingBackground } from "./LandingBackground/LandingBackground";
 import { LandingForeground } from "./LandingForeground/LandingForeground";
 
 
-const s = 0.04;       // stroke width for central hexagon
+const s = 0;       // stroke width for central hexagon
 const r = 0.5 - s    
 const cos30 = Math.cos(Math.PI / 6);
 const sin30 = Math.sin(Math.PI / 6);
@@ -53,8 +53,28 @@ export function Landing(props) {
 
         <Link to="/home" className="Landing__linkToHome">
           <svg viewBox="0 0 1 1" preserveAspectRatio="xMinYMin meet">
+            <defs>
+              <path
+                id="hexagon-right-side"
+                strokeWidth="0"
+                d= {`
+                  M  0.5                 0
+                  L  0.5               ${s}
+                  L  ${0.5 + r*cos30}  ${0.5 - r*sin30}
+                  L  ${0.5 + r*cos30}  ${0.5 + r*sin30}
+                  L  0.5               ${1 - s}
+                  L  0.5                 1
+                  L  1                   1
+                  L  1                   0
+                  z
+                `}
+              />
+            </defs>
+            <use xlinkHref="#hexagon-right-side" fill="white"/>
+            <use xlinkHref="#hexagon-right-side" fill="white" transform="rotate(180 0.5 0.5)"/>
             <path
-              stroke="indigo"
+              fill="transparent"
+              stroke="blue"
               strokeWidth={s}
               strokeLinejoin="round"
               d= {`

@@ -292,10 +292,10 @@ function drawCircleSmall(ctx, r, quadrant, xAccList, yAccList, xVelList, yVelLis
   if (y > yMax) {y = yMax};
 
   if (xAccList.length > 10000) {
-    xAccList.splice(0, 1000);
-    yAccList.splice(0, 1000);
-    xVelList.splice(0, 1000);
-    yVelList.splice(0, 1000);
+    xAccList.splice(0, 9000);
+    yAccList.splice(0, 9000);
+    xVelList.splice(0, 9000);
+    yVelList.splice(0, 9000);
   }
 
   

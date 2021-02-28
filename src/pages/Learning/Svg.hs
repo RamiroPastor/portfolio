@@ -31,6 +31,7 @@ compileSvg =
 allSvg :: [ (FilePath , Svg) ]
 allSvg =
   [ (,) "mosaicInterlacedSquares.svg" interlacedSquaresMosaic
+  , (,) "tangentCirclesPaths.svg"     tangentCirclesPaths
   ]
 
 
@@ -40,7 +41,6 @@ interlacedSquaresMosaic =
     docTypeSvg
       ! A.viewbox "0 0 1 1"
       ! A.preserveaspectratio "xMinYMin meet"
-      ! A.fill "black"
       $ do
         cornerTopLeft
         cornerTopLeft ! A.transform (rotateAround 180 0.5 0.5)
@@ -84,4 +84,58 @@ interlacedSquaresMosaic =
       m   ax    ay
       l   (0.5 - k2)  ay
       l   0.5  0.25
+
+-------------------------------------------------------------------------------
+
+
+tangentCirclesPaths :: Svg
+tangentCirclesPaths = 
+    docTypeSvg
+      ! A.viewbox "0 0 1 1"
+      ! A.preserveaspectratio "xMinYMin meet"
+      $ do
+        defs $ do
+          topRightBottomLeft
+          topLeftBottomRight
+          vertical
+          horizontal  
+        use 
+          -- ! A.xlinkHref "#clipCircles-topRightBottomLeft"
+          -- ! A.xlinkHref "#clipCircles-topLeftBottomRight"
+          -- ! A.xlinkHref "#clipCircles-vertical"
+          ! A.xlinkHref "#clipCircles-horizontal" 
+          ! A.fill "crimson"
+  where
+    d = ((sqrt 2) / 4) * tan (pi / 8)
+    r = (1 / 2) * tan (pi / 8)
+    topRightBottomLeft =
+      S.path 
+        ! A.id_ "clipCircles-topRightBottomLeft" 
+        ! A.d topRightBottomLeftDirs
+    topLeftBottomRight =
+      S.path 
+        ! A.id_ "clipCircles-topLeftBottomRight" 
+        ! A.d topRightBottomLeftDirs
+        ! A.transform (rotateAround 90 0.5 0.5)
+    vertical = 
+      S.path
+        ! A.id_ "clipCircles-vertical"
+        ! A.d verticalDirs
+    horizontal =
+      S.path 
+        ! A.id_ "clipCircles-horizontal"
+        ! A.d verticalDirs
+        ! A.transform (rotateAround 90 0.5 0.5)
+    topRightBottomLeftDirs = mkPath $ do
+      m   0.5   0.25
+      aa  0.25  0.25  0  True  True  0.75  0.5
+      aa  0.25  0.25  0  False False 0.5   0.75
+      aa  0.25  0.25  0  True  True  0.25  0.5
+      aa  0.25  0.25  0  False False 0.5   0.25 
+    verticalDirs = mkPath $ do
+      m   (0.5 - d)  (0.5 - d)
+      aa  r  r  0  True  True  (0.5 + d) (0.5 - d)
+      aa  r  r  0  False False (0.5 + d) (0.5 + d)
+      aa  r  r  0  True  True  (0.5 - d) (0.5 + d)
+      aa  r  r  0  False False (0.5 - d) (0.5 - d)
 

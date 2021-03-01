@@ -48,13 +48,13 @@ export function Learning(props) {
             "Learning__project--trivial",
             "Trivial",
             props.t("projectTrivial"),
-            "https://juego-de-tronos.netlify.app"
+            "https://el-juego-de-las-preguntas.netlify.app"
           )}
           {learningSection(
             "Learning__project--rpg",
             "RPG",
             props.t("projectRPG"),
-            "https://juego-de-tronos.netlify.app"
+            "https://ramiropastor-rpg.netlify.app"
           )}
         </article>
       </div>

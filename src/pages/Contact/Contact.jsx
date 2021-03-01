@@ -16,9 +16,9 @@ export function Contact(props) {
         <Nav t={props.t}/>
         <div className="Contact__main">
           <h1 className="Contact__title">{props.t("contact")}</h1>
-          <a className="Contact__email" href="mailto:ramir659@gmail.com">
+          <a className="Contact__email" href={"mailto:" + process.env.REACT_APP_MYEMAIL}>
             {envelopeSvg}
-            ramir659@gmail.com
+            {process.env.REACT_APP_MYEMAIL}
           </a>
         </div>
       </div>

@@ -1,5 +1,6 @@
 
-import React from "react";
+import React, { useState } from "react";
+
 
 import cambridgeImgUrl      from "../../assets/cv/cambridge.svg";
 import emailImgUrl          from "../../assets/cv/email.svg";
@@ -163,6 +164,8 @@ function social(img$$, platform, url) {
 
 
 export function Cv(props) {
+
+  const [showPhone, setShowPhone] = useState(false);
   
   return(
     <div className="Cv__background">
@@ -181,11 +184,16 @@ export function Cv(props) {
             </h5>
             <div className="Cv__personalInfo">
                 {emailImg}
-                <span>ramir659@gmail.com</span>
+                <span>{process.env.REACT_APP_MYEMAIL}</span>
             </div>
             <div className="Cv__personalInfo">
                 {whatsappImg}
-                <span>+34 659687162</span>
+                <span>
+                  { showPhone 
+                    ? process.env.REACT_APP_MYPHONE
+                    : <button onClick={() => setShowPhone(true)}>show</button>
+                  }
+                </span>
             </div>
             <div className="Cv__personalInfo">
                 {locationImg}
@@ -288,10 +296,10 @@ export function Cv(props) {
         </div>
       </section>
 
-      <a className="Cv__callToAction" href="mailto:ramir659@gmail.com">
+      <a className="Cv__callToAction" href={"mailto:" + process.env.REACT_APP_MYEMAIL}>
         {props.t("contactMe")}
         <br/>
-        <span>ramir659@gmail.com</span>
+        <span>{process.env.REACT_APP_MYEMAIL}</span>
       </a>
 
     </article>    

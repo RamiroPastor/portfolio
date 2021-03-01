@@ -6,14 +6,14 @@
     width: 50%;
     height: 100%;
     background-image: url(../../assets/img/mosaicGeo.svg);
-    background-size: 16%;
+    background-size: 16vmin;
     background-repeat: repeat;
     background-position: 0 50%;
     &--left {
-      animation: rollingBackgroundToRight 200s linear 0s infinite;
+      animation: rollingBackgroundToRight 500s linear 0s infinite;
     }
     &--right {
-      animation: rollingBackgroundToLeft 200s linear 0s infinite;
+      animation: rollingBackgroundToLeft 500s linear 0s infinite;
     }
   }
   &__foreground {

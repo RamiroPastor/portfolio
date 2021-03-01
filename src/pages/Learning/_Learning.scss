@@ -1,7 +1,7 @@
 .Learning {
   height: 100%;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(255, 200, 160);
 }
 
@@ -11,7 +11,7 @@
   align-items: center;
   height: 100%;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding-top: 2rem;
   background-image: url(../../assets/img/mosaicInterlacedSquares.svg);
   background-repeat: repeat;
@@ -19,7 +19,204 @@
   background-size: 10rem;
 }
 
-.prueba {
-  clip-path: url(../../assets/img/tangentCirclesPaths.svg#clipCircles-topRightBottomLeft);
-  border: 5px solid indigo;
+.Learning__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  @include desktop {
+    align-items: flex-start;
+    width: 90rem;
+    padding-bottom: 30rem;
+  }
+}
+
+.Learning__project {
+  $w1: 26rem;
+  $h1: 2 * $w1;
+  $w2: 60rem;
+  $h2: $w2/2;
+  $w3: 50rem;
+  $h3: $w3;
+  display: flex;
+  flex-direction: column;
+  width: $w1;
+  height: $h1;
+  margin-bottom: 3rem;
+  background-image: url(../../assets/img/circlesVertical.svg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  @include landscape {
+    width: $w2;
+    height: $h2;
+    background-image: url(../../assets/img/circlesHorizontal.svg);
+    &:nth-child(2n + 1) {
+      flex-direction: row;
+      .Learning__projectLink {
+        left: 2.2rem;
+      }
+      .Learning__projectInfo {
+        right: 2.6rem;
+      }
+    }
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      .Learning__projectLink {
+        right: 2.2rem;
+      }
+      .Learning__projectInfo {
+        left: 2.6rem;
+      }
+    }
+  }
+  @include desktop {
+    width: $w3;
+    height: $h3;
+    margin-bottom: -20rem;
+    &:nth-child(2n + 1) {
+      background-image: url(../../assets/img/circlesTopLeftBottomRight.svg);
+      .Learning__projectInfo {
+        left: 0;
+        right: 0;
+      }
+      .Learning__projectLink {
+        left: 0;
+        right: 0;
+      }
+    }
+    &:nth-child(2n) {
+      align-self: flex-end;
+      background-image: url(../../assets/img/circlesTopRightBottomLeft.svg);
+      .Learning__projectInfo {
+        left: 0;
+        right: 0;
+      }
+      .Learning__projectLink {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  &InfoWrap {
+    width: $w1;
+    height: $h1/2;
+    padding: 20%;
+    @include landscape {
+      width: $w2/2;
+      height: $h2;
+      padding: 10%;
+    }
+    @include desktop {
+      width: $w3/2;
+      height: $h3/2;
+    }
+  }
+  &Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .Learning__projectName {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    @include landscape {
+      justify-content: center;
+    }
+    @include desktop {
+      right: 0;
+    }
+  }
+  &LinkWrap {
+    width: $w1;
+    height: $h1/2;
+    padding: 12%;
+    @include landscape {
+      width: $w2/2;
+      height: $h2;
+      padding: 6%;
+    }
+    @include desktop {
+      width: $w3/2;
+      height: $h3/2;
+      padding: 3%;
+      align-self: flex-end;
+    }
+  }
+  &Link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 2rem;
+    border-radius: 1000px;
+    background-position: center top;
+    background-size: cover;
+    @include landscape {
+      top: 0;
+    }
+    @include desktop {
+      .Learning__projectLinkButton {
+        display: none;
+        box-shadow: 0 -6.7rem 0 9rem rgba(0, 0, 0, 0.5);
+      }
+      &:hover {
+        .Learning__projectLinkButton {
+          display: flex;
+        }
+      }
+    }
+  }
+  &LinkButton {
+    $x: 4.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -0.5 * $x;
+    width: $x;
+    height: $x;
+    border: 0.2rem solid indigo;
+    border-radius: 100px;
+    background-color: thistle;
+    color: indigo;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    &:hover {
+      background-color: rgb(255, 200, 255);
+      color: teal;
+    }
+  }
+}
+
+.Learning__project--got {
+  .Learning__projectLink {
+    background-image: url(../../assets/img/project_GoT.png);
+  }
+}
+
+.Learning__project--shopeame {
+  .Learning__projectLink {
+    background-image: url(../../assets/img/project_shopeame.png);
+  }
+}
+
+.Learning__project--trivial {
+  .Learning__projectLink {
+    background-image: url(../../assets/img/project_trivial.png);
+  }
+}
+
+.Learning__project--rpg {
+  .Learning__projectLink {
+    background-image: url(../../assets/img/project_rpg.png);
+  }
 }

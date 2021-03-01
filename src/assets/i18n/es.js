@@ -49,4 +49,10 @@ export const es =
   , professional: "Profesional"
   , beginner: "Principiante"
   , contactMe: "¡Contactame!"
+  // Learning
+  , go: "ir"
+  , projectGoT: "Proyecto en equipo con React para UpgradeHub; utiliza una api de juego de tronos"
+  , projectShopeame: "Proyecto individual con Angular para UpgradeHub; utiliza una api simulada, puede tardar"
+  , projectTrivial: "Proyecto individual con vanilla Js para UpgradeHub; utiliza una api externa para las preguntas"
+  , projectRPG: "Proyecto individual con vanilla Js para UpgradeHub"
   }

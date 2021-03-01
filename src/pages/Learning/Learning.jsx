@@ -3,20 +3,63 @@ import React from "react";
 
 import { Nav } from "../../core/Nav/Nav";
 
-import paths from "../../assets/img/tangentCirclesPaths.svg"
-
 
 
 export function Learning(props) {
+
+  function learningSection(cls, name, desc, url) {
+
+    return(
+      <section className={"Learning__project " + cls}>
+        <div className="Learning__projectInfoWrap">
+          <div className={"Learning__projectInfo"}>
+            <h3 className="Learning__projectName">{name}</h3>
+            <p>{desc}</p>
+          </div>
+        </div>
+        <div className="Learning__projectLinkWrap">
+          <a target="_blank" rel="noreferrer" href={url} className="Learning__projectLink">
+            <span className="Learning__projectLinkButton">
+              {props.t("go")}
+            </span>
+          </a>
+        </div>
+      </section>  
+  )}
   
   return(
     <div className="Learning">
       <div className="Learning__foreground">
         <Nav t={props.t}/>
-        <div className="prueba">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </div>
+        <article className="Learning__main">
+          {learningSection(
+            "Learning__project--got",
+            "GoT",
+            props.t("projectGoT"),
+            "https://juego-de-tronos.netlify.app"
+          )}
+          {learningSection(
+            "Learning__project--shopeame",
+            "Shopéame",
+            props.t("projectShopeame"),
+            "https://juego-de-tronos.netlify.app"
+          )}
+          {learningSection(
+            "Learning__project--trivial",
+            "Trivial",
+            props.t("projectTrivial"),
+            "https://juego-de-tronos.netlify.app"
+          )}
+          {learningSection(
+            "Learning__project--rpg",
+            "RPG",
+            props.t("projectRPG"),
+            "https://juego-de-tronos.netlify.app"
+          )}
+        </article>
       </div>
     </div>
   )
 }
+
+

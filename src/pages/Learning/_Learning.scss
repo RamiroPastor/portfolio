@@ -191,8 +191,9 @@
     font-size: 1.8rem;
     text-transform: uppercase;
     &:hover {
-      background-color: rgb(255, 200, 255);
+      background-color: rgb(180, 255, 220);
       color: teal;
+      border-color: teal;
     }
   }
 }

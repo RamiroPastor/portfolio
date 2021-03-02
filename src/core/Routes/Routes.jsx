@@ -4,11 +4,11 @@ import { Route, Switch } from "react-router-dom";
 
 import { Contact  } from "../../pages/Contact/Contact";
 import { Cv       } from "../../pages/Cv/Cv";
+import { Home     } from "../../pages/Home/Home";
 import { Landing  } from "../../pages/Landing/Landing";
 import { Learning } from "../../pages/Learning/Learning";
+import { NotFound } from "../../pages/NotFound/NotFound";
 import { Projects } from "../../pages/Projects/Projects";
-import { Home     } from "../../pages/Home/Home";
-import { Wip      } from "../../pages/Wip/Wip";
 
 
 export function Routes(props) {
@@ -41,7 +41,7 @@ export function Routes(props) {
       </Route>
 
       <Route path="/">
-        <Wip/>
+        <NotFound t={props.t}/>
       </Route>
 
     </Switch>

@@ -55,4 +55,7 @@ export const en =
   , projectShopeame: "Individual project with Angular for UpgradeHub; fetches mock api, might delay"
   , projectTrivial: "Individual project with vanilla Js for UpgradeHub; fetches external api for questions"
   , projectRPG: "Individual project with vanilla Js for UpgradeHub"
+  // Not Found
+  , notFound: "Not Found"
+  , hordesOfHell: "The hordes of Hell are coming"
   }

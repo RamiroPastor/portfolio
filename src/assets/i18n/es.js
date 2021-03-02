@@ -55,4 +55,7 @@ export const es =
   , projectShopeame: "Proyecto individual con Angular para UpgradeHub; utiliza una api simulada, puede tardar"
   , projectTrivial: "Proyecto individual con vanilla Js para UpgradeHub; utiliza una api externa para las preguntas"
   , projectRPG: "Proyecto individual con vanilla Js para UpgradeHub"
+  // Not Found
+  , notFound: "No encontrado"
+  , hordesOfHell: "Las hordas del Infierno se acercan"
   }

@@ -7,6 +7,20 @@
   src: url(../../assets/fonts/BalmoralStd.otf) format("opentype");
 }
 
+// Diablo
+
+@font-face {
+  font-family: Diablo;
+  src: url(../../assets/fonts/DiabloLight.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Diablo;
+  src: url(../../assets/fonts/DiabloHeavy.ttf);
+  font-weight: 700;
+}
+
 // Didact Gothic
 
 @font-face {

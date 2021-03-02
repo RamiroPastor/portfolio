@@ -18,7 +18,7 @@
   background-repeat: repeat;
   background-size: $w ($w * math.sqrt(3));
   @include printer {
-    padding: 0 2rem 7.7rem 2rem;
+    padding: 0 2rem 0rem 2rem;
   }
 }
 
@@ -36,6 +36,7 @@
   box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.4);
   @include printer {
     min-height: 18cm;
+    margin: 0.88cm 0;
   }
 }
 

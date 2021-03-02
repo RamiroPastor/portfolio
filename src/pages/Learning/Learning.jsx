@@ -42,7 +42,7 @@ export function Learning(props) {
             "Learning__project--shopeame",
             "Shopéame",
             props.t("projectShopeame"),
-            "https://juego-de-tronos.netlify.app"
+            "https://shopeame.netlify.app"
           )}
           {learningSection(
             "Learning__project--trivial",

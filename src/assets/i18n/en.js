@@ -18,10 +18,9 @@ export const en =
   , sleepAndEat: "Sleeping and eating"
   , dislikes: "Dislikes:"
   , sports: "Practising sports"
-  , healthyFood: "Healthy food"
+  , manipulativePeople: "Manipulative people"
   , earlyMornings: "Early mornings"
-  , dislikePHP: "PHP (a lot)"
-  , dislikeDocker: "Docker (a bit)"
+  , moreDislikes: "PHP, Java and Docker"
   // curriculum
   , cvDesc1: "I like Functional Programming with Haskell and web development, especially the graphic part (UX / UI and frontend)."
   , cvDesc2: "I also like math and video games."

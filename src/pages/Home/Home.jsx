@@ -51,10 +51,9 @@ export function Home(props) {
                   <h5>{props.t("dislikes")}</h5>
                   <ul>
                     <li>{redCross} {props.t("sports")}</li>
-                    <li>{redCross} {props.t("healthyFood")}</li>
+                    <li>{redCross} {props.t("manipulativePeople")}</li>
                     <li>{redCross} {props.t("earlyMornings")}</li>
-                    <li>{redCross} {props.t("dislikePHP")}</li>
-                    <li>{redCross} {props.t("dislikeDocker")}</li>
+                    <li>{redCross} {props.t("moreDislikes")}</li>
                   </ul>
                 </div>
               </section>

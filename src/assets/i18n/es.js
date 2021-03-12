@@ -18,10 +18,9 @@ export const es =
   , sleepAndEat: "Dormir y comer"
   , dislikes: "Cosas que odio:"
   , sports: "Hacer deporte"
-  , healthyFood: "Comer sano"
+  , manipulativePeople: "A la gente manipuladora"
   , earlyMornings: "Madrugar"
-  , dislikePHP: "PHP (mucho)"
-  , dislikeDocker: "Docker (un poco)"
+  , moreDislikes: "PHP, Java y Docker"
   // curriculum
   , cvDesc1: "Me gusta la Programación Funcional con Haskell y el desarrollo web, especialmente la parte gráfica destinada a la interacción con el usuario (UX/UI y frontend)."
   , cvDesc2: "También me gustan las matemáticas y los videojuegos."

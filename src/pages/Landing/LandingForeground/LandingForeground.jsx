@@ -37,7 +37,10 @@ export function LandingForeground(props) {
 
   const draw = (ctx, p0, counter, pts) => {
 
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+    ctx.clearRect(-ctx.canvas.width, -ctx.canvas.height, 2*ctx.canvas.width, 2*ctx.canvas.height)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+    ctx.translate(ctx.canvas.width / 2, ctx.canvas.width / 2)
+    // ctx.scale(1, -1)
     ctx.fillStyle = "#ffffff"
     ctx.strokeStyle = "indigo"
     ctx.lineWidth = 2
@@ -122,28 +125,28 @@ export function LandingForeground(props) {
 
 
     const originPoints =
-      { ax: 500, ay: 500, ar: 166
-      , bx: 310, by: 310, br: 95, bd: 30
-      , cx: 690, cy: 310, cr: 95, cd: 30
-      , dx: 310, dy: 690, dr: 95, dd: 30
-      , ex: 690, ey: 690, er: 95, ed: 30
+      { ax: 0, ay: 0, ar: 166
+      , bx: -190, by: -190, br: 95, bd: 30
+      , cx: 190, cy: -190, cr: 95, cd: 30
+      , dx: -190, dy: 190, dr: 95, dd: 30
+      , ex: 190, ey: 190, er: 95, ed: 30
       , r0: 60
       , bAxAcc: [0], bAyAcc: [0], bAxVel: [], bAyVel: []
-      , bBx: 120, bBy: 240, bBxAcc: [0], bByAcc: [0], bBxVel: [], bByVel: []
-      , bCx: 240, bCy: 120, bCxAcc: [0], bCyAcc: [0], bCxVel: [], bCyVel: []
-      , bDx: 360, bDy: 120, bDxAcc: [0], bDyAcc: [0], bDxVel: [], bDyVel: []
-      , cAx: 540, cAy: 120, cAxAcc: [0], cAyAcc: [0], cAxVel: [], cAyVel: []
-      , cBx: 660, cBy: 120, cBxAcc: [0], cByAcc: [0], cBxVel: [], cByVel: []
-      , cCx: 780, cCy: 120, cCxAcc: [0], cCyAcc: [0], cCxVel: [], cCyVel: []
-      , cDx: 880, cDy: 220, cDxAcc: [0], cDyAcc: [0], cDxVel: [], cDyVel: [] 
-      , cEx: 880, cEy: 340, cExAcc: [0], cEyAcc: [0], cExVel: [], cEyVel: []
-      , cFx: 880, cFy: 460, cFxAcc: [0], cFyAcc: [0], cFxVel: [], cFyVel: []
-      , dAx: 120, dAy: 760, dAxAcc: [0], dAyAcc: [0], dAxVel: [], dAyVel: []
-      , dBx: 120, dBy: 880, dBxAcc: [0], dByAcc: [0], dBxVel: [], dByVel: []
-      , dCx: 240, dCy: 880, dCxAcc: [0], dCyAcc: [0], dCxVel: [], dCyVel: []
-      , eAx: 760, eAy: 880, eAxAcc: [0], eAyAcc: [0], eAxVel: [], eAyVel: []
-      , eBx: 880, eBy: 880, eBxAcc: [0], eByAcc: [0], eBxVel: [], eByVel: []
-      , eCx: 880, eCy: 760, eCxAcc: [0], eCyAcc: [0], eCxVel: [], eCyVel: []
+      , bBxAcc: [0], bByAcc: [0], bBxVel: [], bByVel: []
+      , bCxAcc: [0], bCyAcc: [0], bCxVel: [], bCyVel: []
+      , bDxAcc: [0], bDyAcc: [0], bDxVel: [], bDyVel: []
+      , cAxAcc: [0], cAyAcc: [0], cAxVel: [], cAyVel: []
+      , cBxAcc: [0], cByAcc: [0], cBxVel: [], cByVel: []
+      , cCxAcc: [0], cCyAcc: [0], cCxVel: [], cCyVel: []
+      , cDxAcc: [0], cDyAcc: [0], cDxVel: [], cDyVel: [] 
+      , cExAcc: [0], cEyAcc: [0], cExVel: [], cEyVel: []
+      , cFxAcc: [0], cFyAcc: [0], cFxVel: [], cFyVel: []
+      , dAxAcc: [0], dAyAcc: [0], dAxVel: [], dAyVel: []
+      , dBxAcc: [0], dByAcc: [0], dBxVel: [], dByVel: []
+      , dCxAcc: [0], dCyAcc: [0], dCxVel: [], dCyVel: []
+      , eAxAcc: [0], eAyAcc: [0], eAxVel: [], eAyVel: []
+      , eBxAcc: [0], eByAcc: [0], eBxVel: [], eByVel: []
+      , eCxAcc: [0], eCyAcc: [0], eCxVel: [], eCyVel: []
       }
     
   
@@ -238,10 +241,10 @@ function drawCircleSmall(ctx, r, quadrant, xAccList, yAccList, xVelList, yVelLis
 
   let xMin, xMax, yMin, yMax;
   
-  const min1 = 0   + r;
-  const min2 = 550 + r;
-  const max1 = 450 - r;
-  const max2 = 1000 - r;
+  const min1 = -500 + r;
+  const min2 =   50 + r;
+  const max1 =  -50 - r;
+  const max2 =  500 - r;
 
   switch (quadrant) {
     case "q1":

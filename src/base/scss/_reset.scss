@@ -15,4 +15,7 @@ html {
   @include desktop {
     font-size: 62.5%;
   }
+  @include printer {
+    font-size: 62.5%;
+  }
 }

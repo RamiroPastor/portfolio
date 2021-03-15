@@ -8,7 +8,6 @@ export const en =
   , welcome: "Welcome to the personal site of"
   , imNice: "I'm nice, but introverted"
   , imLazy: "I am creative and a bit lazy, but I work hard when I am passionate"
-  , imSlow: "I am a slow learner, because I try to understand rather than memorize"
   , jokeLine1: "Someone stole my Microsoft Office and they're gonna pay."
   , jokeLine2: "You have my Word."
   , likes: "Likes:"

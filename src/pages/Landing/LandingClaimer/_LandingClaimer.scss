@@ -1,0 +1,48 @@
+.LandingClaimer__outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.LandingClaimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  $x: 34rem;
+  width: $x;
+  height: $x;
+  padding: 1.6rem 2.6rem;
+  background-color: white;
+  text-align: center;
+  font-size: 1rem;
+  border-style: none;
+  border-radius: 400px / 1000px;
+  &__list {
+    list-style-type: none;
+  }
+  &__cookies {
+    text-transform: uppercase;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    $y: 3rem;
+    width: $y;
+    height: $y;
+    border: 1px solid black;
+    border-radius: 200px;
+    background-color: white;
+    &:hover {
+      background-color: rgb(234,234,234);
+    }
+  }
+}

@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { LandingBackground } from "./LandingBackground/LandingBackground";
+import { LandingClaimer }    from "./LandingClaimer/LandingClaimer";
 import { LandingForeground } from "./LandingForeground/LandingForeground";
 
 
@@ -17,6 +18,7 @@ export function Landing(props) {
     <div className="Landing">
       <LandingBackground/>
       <LandingForeground/>
+      <LandingClaimer/>
       <div className="Landing__main">
 
         <svg className="Landing__myname" viewBox="0 0 100 100">

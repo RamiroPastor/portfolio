@@ -30,7 +30,6 @@ export function Home(props) {
               <section className="HomeMain__description">
                 <p>{props.t("imNice")}</p>
                 <p>{props.t("imLazy")}</p>
-                <p>{props.t("imSlow")}</p>
                 <i>
                   {props.t("jokeLine1")}
                   <br/>

@@ -35,8 +35,9 @@ $sidebarBackground: rgb(230, 230, 255);
   flex-direction: column;
   background-color: white;
   margin-top: 6rem;
-  width: $dinA4W;
-  height: $dinA4H;
+  width: 90vw;
+  max-width: $dinA4W;
+  min-height: $dinA4H;
   box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   @include printer {
@@ -46,7 +47,12 @@ $sidebarBackground: rgb(230, 230, 255);
 
 .Cv1__header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  @include landscape {
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
 
 .Cv1__myPhotoWrapper {
@@ -54,9 +60,13 @@ $sidebarBackground: rgb(230, 230, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $x;
+  width: 100%;
+  max-width: $x;
   height: $x;
-  background-color: $sidebarBackground;
+  background-color: white;
+  @include desktop {
+    background-color: $sidebarBackground;
+  }
 }
 
 .Cv1__myPhoto {
@@ -71,7 +81,8 @@ $sidebarBackground: rgb(230, 230, 255);
 .Cv1__personal {
   display: flex;
   flex-direction: column;
-  width: $divineInverse * $dinA4W;
+  width: 100%;
+  max-width: $divineInverse * $dinA4W;
   padding: 3rem;
 }
 
@@ -116,14 +127,24 @@ $sidebarBackground: rgb(230, 230, 255);
 .Cv1__body {
   flex-grow: 1;
   display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
 
 .Cv1__sidebar {
   display: flex;
   flex-direction: column;
-  width: $dinA4W - $divineInverse * $dinA4W;
+  width: 100%;
+  max-width: $dinA4W - $divineInverse * $dinA4W;
   padding: 3rem;
-  background-color: $sidebarBackground;
+  background-color: white;
+  @include desktop {
+    background-color: $sidebarBackground;
+  }
 }
 
 .Cv1__social, .Cv1__langs, .Cv1__skills {
@@ -225,7 +246,8 @@ $sidebarBackground: rgb(230, 230, 255);
 .Cv1__main {
   display: flex;
   flex-direction: column;
-  width: $divineInverse * $dinA4W;
+  width: 100%;
+  max-width: $divineInverse * $dinA4W;
   padding: 3rem;
 }
 
@@ -233,6 +255,10 @@ $sidebarBackground: rgb(230, 230, 255);
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
+}
+
+.Cv1__work {
+  margin-bottom: 0;
 }
 
 .Cv1__study {

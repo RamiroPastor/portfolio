@@ -65,7 +65,7 @@ $sidebarBackground: rgb(230, 230, 255);
   --x: 23rem;
   height: var(--x);
   width: var(--x);
-  filter: sepia(80%);
+  filter: grayscale(80%);
 }
 
 .Cv1__personal {

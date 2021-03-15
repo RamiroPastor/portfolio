@@ -32,7 +32,7 @@ export const en =
   , stMichaels: "St.Michaels School, Boadilla del Monte"
   , workExperience: "work experience"
   , workExp2_title: "Backend Haskell developer"
-  , workExp2_desc: "Web backend programmer with Haskell for a fantasy football startup in the incubation phase of, under a summer internship scheme"
+  , workExp2_desc: "Web backend programmer with Haskell for a fantasy football startup in the incubation stage, under a summer internship scheme"
   , workExp1_title: "Private lessons teacher"
   , workExp1_location: "Majadahonda Academy"
   , workExp1_desc: "Private teacher for boys and girls in high school, mainly for the subject of Mathematics"

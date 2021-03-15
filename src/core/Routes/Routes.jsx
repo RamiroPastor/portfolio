@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 import { Contact  } from "../../pages/Contact/Contact";
 import { Cv       } from "../../pages/Cv/Cv";
+import { Cv1      } from "../../pages/Cv1/Cv1";
 import { Home     } from "../../pages/Home/Home";
 import { Landing  } from "../../pages/Landing/Landing";
 import { Learning } from "../../pages/Learning/Learning";
@@ -30,6 +31,10 @@ export function Routes(props) {
 
       <Route path="/cv">
         <Cv t={props.t}/>
+      </Route>
+
+      <Route path="/cv1">
+        <Cv1 t={props.t}/>
       </Route>
 
       <Route path="/contact">

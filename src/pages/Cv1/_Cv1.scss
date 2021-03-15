@@ -1,0 +1,318 @@
+@use "sass:math";
+
+$dinA4H: 29.7cm;
+$dinA4W: 21cm;
+$divineProportion: 1.618;
+$divineInverse: 0.618;
+$sidebarBackground: rgb(230, 230, 255);
+
+.Cv1__background {
+  width: 100%;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
+    linear-gradient(to right, mediumturquoise, powderblue, aqua);
+  font-family: "Varela Round", sans-serif;
+  color: rgb(50, 50, 50);
+}
+
+.Cv1__foreground {
+  $w: 4.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 6rem 2rem;
+  background-image: url("../../assets/cv/mosaicPajarita.svg");
+  background-repeat: repeat;
+  background-size: $w ($w * math.sqrt(3));
+  @include printer {
+    padding: 0;
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv1 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 6rem;
+  width: $dinA4W;
+  height: $dinA4H;
+  box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  @include printer {
+    margin: 0;
+  }
+}
+
+.Cv1__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.Cv1__myPhotoWrapper {
+  $x: $dinA4W - $divineInverse * $dinA4W;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $x;
+  height: $x;
+  background-color: $sidebarBackground;
+}
+
+.Cv1__myPhoto {
+  border: 2px solid rgb(50, 50, 50);
+  border-radius: 1000px;
+  --x: 23rem;
+  height: var(--x);
+  width: var(--x);
+  filter: sepia(80%);
+}
+
+.Cv1__personal {
+  display: flex;
+  flex-direction: column;
+  width: $divineInverse * $dinA4W;
+  padding: 3rem;
+}
+
+.Cv1__personalDescription {
+  flex-grow: 1;
+  h1 {
+    font-size: 3.6rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.Cv1__personalInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Cv1__personalInfo {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  img {
+    --x: 2rem;
+    width: var(--x);
+    height: var(--x);
+    margin-right: 1.5rem;
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv1__sectionHeader {
+  text-transform: uppercase;
+  color: tomato;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgb(180, 180, 180);
+}
+
+/* ------------------------------------------------------------ */
+
+.Cv1__body {
+  flex-grow: 1;
+  display: flex;
+}
+
+.Cv1__sidebar {
+  display: flex;
+  flex-direction: column;
+  width: $dinA4W - $divineInverse * $dinA4W;
+  padding: 3rem;
+  background-color: $sidebarBackground;
+}
+
+.Cv1__social, .Cv1__langs, .Cv1__skills {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.Cv1__skills {
+  margin-bottom: 0;
+}
+
+.Cv1__socialList {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.8rem;
+  list-style-type: none;
+  li {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    --x: 3rem;
+    height: var(--x);
+    width: var(--x);
+    margin-right: 1.5rem;
+  }
+}
+
+.Cv1__langList {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center;
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.8rem;
+  }
+  img {
+    border-radius: 200px;
+    --x: 2.4rem;
+    height: var(--x);
+    width: var(--x);
+    margin-bottom: 1rem;
+  }
+  span {
+    display: none;
+  }
+  p {
+    margin: 0.3rem 0 0 0;
+    font-size: 1rem;
+  }
+}
+
+.Cv1__skillList {
+  list-style-type: none;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+  }
+  img {
+    --x: 1.8rem;
+    height: var(--x);
+    width: var(--x);
+    margin-right: 1rem;
+    object-fit: scale-down;
+  }
+  span {
+    flex-grow: 1;
+  }
+  em {
+    font-style: normal;
+    cursor: default;
+    transform: translateY(-2px);
+  }
+}
+
+.Cv1__lowSkill {
+  color: #CD7F32;
+}
+
+.Cv1__mediumSkill {
+  color: darkgray;
+}
+
+.Cv1__highSkill {
+  color: gold;
+}
+
+
+
+/* ------------------------------------------------------------ */
+
+.Cv1__main {
+  display: flex;
+  flex-direction: column;
+  width: $divineInverse * $dinA4W;
+  padding: 3rem;
+}
+
+.Cv1__studies, .Cv1__work {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
+
+.Cv1__study {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  img {
+    align-self: center;
+    --x: 5rem;
+    height: var(--x);
+    width: var(--x);
+    margin-bottom: 2rem;
+    filter: grayscale(80%);
+  }
+  @include landscape {
+    flex-direction: row;
+    img {
+      margin-bottom: 0;
+      margin-right: 2rem;
+    }
+  }
+  @include printer {
+    flex-direction: row;
+    img {
+      margin-bottom: 0;
+      margin-right: 2rem;
+    }
+  }
+}
+
+.Cv1__studyInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  h4 {
+    flex-grow: 1;
+    font-size: 1.5rem;
+  }
+  span {
+    margin-left: 1rem;
+    font-size: 1rem;
+    text-align: end;
+  }
+  p {
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+  }
+}
+
+
+.Cv1__workInfo {
+  margin-top: 4rem;
+  div {
+    display: flex;
+  }
+  h4 {
+    flex-grow: 1;
+    margin: 0;
+  }
+  span {
+    font-size: 1.1rem;
+    text-align: end;
+  }
+  em {
+    font-size: 1.2rem;
+    font-style: normal;
+  }
+  p {
+    margin: 1.2rem 0 0 0;
+    font-size: 1.4rem;
+    color: rgb(120, 120, 120);
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+

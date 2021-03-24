@@ -5,6 +5,7 @@
 
 module NavIcons where
 
+import Data.Text as T
 import Text.Blaze.Svg11 ((!))
 import Text.Blaze.Svg11 as S
 import Text.Blaze.Svg11.Attributes as A
@@ -27,7 +28,7 @@ compileSvg =
     f (name , svgCode) =
       writeFile 
         ("../../assets/svg/" ++ name ++ ".jsx") 
-        ("export const " ++ name ++ "Svg = \n" ++ renderSvg svgCode)
+        (svgToReact name svgCode)
 
 
 allSvg :: [ (FilePath , Svg) ]
@@ -37,6 +38,18 @@ allSvg =
   , (,) "carnet"   carnet
   , (,) "envelope" envelope
   ]
+
+
+svgToReact :: String -> Svg -> String
+svgToReact name svgCode =
+    "export const " ++ name ++ "Svg = \n" ++ render svgCode
+  where
+    render = T.unpack . adaptToReact . T.pack . renderSvg 
+    adaptToReact =
+        (T.replace "stroke-width"     "strokeWidth")
+      . (T.replace "stroke-dasharray" "strokeDasharray")
+      . (T.replace "stroke-linejoin"  "strokeLinejoin")
+      . (T.replace "stroke-linecap"   "strokeLinecap")
 
 
 --------------------------------------------------------------------------------

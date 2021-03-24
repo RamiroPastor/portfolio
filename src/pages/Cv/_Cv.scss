@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem 2rem 6rem 2rem;
-  background-image: url("../../assets/cv/mosaicPajarita.svg");
+  background-image: url("../../assets/img/mosaicPajarita.svg");
   background-repeat: repeat;
   background-size: $w ($w * math.sqrt(3));
   @include printer {

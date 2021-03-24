@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
     "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1 1" preserveAspectRatio="xMinYMin meet">
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.5" cy="0.5" r="0.15" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.18" cy="0.5" r="8.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.78" cy="0.3" r="8.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.78" cy="0.7" r="8.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.18" cy="0.27" r="4.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="9.0e-2" cy="0.7" r="4.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.3" cy="0.85" r="4.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.55" cy="0.13" r="4.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.9" cy="0.1" r="4.0e-2" />
-    <circle fill="none" stroke-width="2.5e-2" stroke="indigo" cx="0.78" cy="0.9" r="4.0e-2" />
-    <path fill="none" stroke-width="1.5e-2" stroke="indigo" d="M 0.26,0.5 L 0.35000002,0.5 M 0.7149013,0.3464991 L 0.62206006,0.41281426 M 0.7149013,0.6535009 L 0.62206006,0.58718574 M 0.18,0.31 L 0.18,0.42 M 0.106414594,0.66352314 L 0.14717083,0.5729537 M 0.28702703,0.81216216 L 0.20594595,0.57567567 M 0.582167,0.15377563 L 0.71566594,0.25244874 M 0.87942016,0.13429973 L 0.82115966,0.2314006 M 0.78,0.85999995 L 0.78,0.78 " />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1 1" preserveAspectRatio="xMinYMin meet" stroke="indigo"><circle fill="none" stroke-width="2.5e-2" cx="0.5" cy="0.5" r="0.15" /><circle fill="none" stroke-width="2.5e-2" cx="0.18" cy="0.5" r="8.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.78" cy="0.3" r="8.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.78" cy="0.7" r="8.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.18" cy="0.27" r="4.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="9.0e-2" cy="0.7" r="4.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.3" cy="0.85" r="4.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.55" cy="0.13" r="4.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.9" cy="0.1" r="4.0e-2" /><circle fill="none" stroke-width="2.5e-2" cx="0.78" cy="0.9" r="4.0e-2" /><path fill="none" stroke-width="1.5e-2" d="M 0.26,0.5 L 0.35000002,0.5 M 0.7149013,0.3464991 L 0.62206006,0.41281426 M 0.7149013,0.6535009 L 0.62206006,0.58718574 M 0.18,0.31 L 0.18,0.42 M 0.106414594,0.66352314 L 0.14717083,0.5729537 M 0.28702703,0.81216216 L 0.20594595,0.57567567 M 0.582167,0.15377563 L 0.71566594,0.25244874 M 0.87942016,0.13429973 L 0.82115966,0.2314006 M 0.78,0.85999995 L 0.78,0.78 " /></svg>

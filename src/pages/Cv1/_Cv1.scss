@@ -20,7 +20,7 @@ $sidebarBackground: rgb(230, 230, 255);
   flex-direction: column;
   align-items: center;
   padding: 2rem 2rem 6rem 2rem;
-  background-image: url("../../assets/cv/mosaicPajarita.svg");
+  background-image: url("../../assets/img/mosaicPajarita.svg");
   background-repeat: repeat;
   background-size: $w ($w * math.sqrt(3));
   @include printer {
@@ -163,7 +163,9 @@ $sidebarBackground: rgb(230, 230, 255);
   }
 }
 
-.Cv1__social, .Cv1__langs, .Cv1__skills {
+.Cv1__social,
+.Cv1__langs,
+.Cv1__skills {
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
@@ -244,7 +246,7 @@ $sidebarBackground: rgb(230, 230, 255);
 }
 
 .Cv1__lowSkill {
-  color: #CD7F32;
+  color: #cd7f32;
 }
 
 .Cv1__mediumSkill {
@@ -254,8 +256,6 @@ $sidebarBackground: rgb(230, 230, 255);
 .Cv1__highSkill {
   color: gold;
 }
-
-
 
 /* ------------------------------------------------------------ */
 
@@ -267,7 +267,8 @@ $sidebarBackground: rgb(230, 230, 255);
   padding: 3rem;
 }
 
-.Cv1__studies, .Cv1__work {
+.Cv1__studies,
+.Cv1__work {
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
@@ -330,7 +331,6 @@ $sidebarBackground: rgb(230, 230, 255);
   }
 }
 
-
 .Cv1__workInfo {
   margin-top: 4rem;
   div {
@@ -356,5 +356,3 @@ $sidebarBackground: rgb(230, 230, 255);
 }
 
 /* ------------------------------------------------------------ */
-
-

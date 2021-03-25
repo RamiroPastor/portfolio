@@ -62,6 +62,8 @@ evenOddSplit [] = ([], [])
 evenOddSplit (x:xs) = (x:o, e)
   where (e,o) = evenOddSplit xs
 
+
+
 starPolygonFirstSpecies :: 
   Int -> Float -> Float -> (Float, Float) -> Svg
 starPolygonFirstSpecies n strokeW radius (c1,c2) =
@@ -192,14 +194,14 @@ religiousTriumvirateMosaic =
     mid x y = (x + y) / 2
     cos60 = 0.5
     sin60 = 0.5 * sqrt 3
-    hexR  = 0.23
+    hexR  = 0.24
     (h1x,h1y) = (0.5 + hexR       , apt + h             )
     (h2x,h2y) = (0.5 + hexR*cos60 , apt + h - hexR*sin60)
     (h3x,h3y) = (0.5 - hexR*cos60 , apt + h - hexR*sin60)
     (h4x,h4y) = (0.5 - hexR       , apt + h             )
     (h5x,h5y) = (0.5 - hexR*cos60 , apt + h + hexR*sin60)
     (h6x,h6y) = (0.5 + hexR*cos60 , apt + h + hexR*sin60)
-    star = starPolygonFirstSpecies 9 0 0.18 (0.5 , h - apt)
+    star = starPolygonFirstSpecies 6 0 0.17 (0.5 , h - apt)
     hexagon =
       S.path 
         ! A.strokeWidth "0"
@@ -222,7 +224,7 @@ religiousTriumvirateMosaic =
     pajaritaInvertida =
       S.path
         ! A.strokeWidth "0"
-        ! A.fill        "blue"
+        ! A.fill        "transparent"
         ! A.d           lowerDirs
     upperDirs =
       mkPath $ do

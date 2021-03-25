@@ -1,22 +1,40 @@
 @use "sass:math";
 
-.Projects__background {
-  $w: 8rem;
+.Projects {
+  $bgW: 8rem;
+  $gW: 0.5 * math.sqrt(3) * $bgW;
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/mosaicReligiousTriumvirate.svg");
-  background-repeat: repeat;
-  background-size: $w ($w * math.sqrt(3));
-}
-
-.Projects {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  padding-top: 2rem;
-  background-image: url(../../assets/img/wip.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 12vmin;
+  min-height: 100vh;
+  $color1: rgba(blue, 0.9);
+  $color2: rgba(darkorange, 0.9);
+  $color3: rgba(indigo, 0.9);
+  $color4: rgba(0, 163, 0, 0.9);
+  background-image: repeating-linear-gradient(
+    120deg,
+    $color4 0.9 * $gW,
+    $color1 1.1 * $gW,
+    $color1 1.9 * $gW,
+    $color2 2.1 * $gW,
+    $color2 2.9 * $gW,
+    $color3 3.1 * $gW,
+    $color3 3.9 * $gW,
+    $color4 4.1 * $gW,
+    $color4 4.9 * $gW
+  );
+  // background-repeat: repeat;
+  background-position: top left;
+  // background-size: (4 * $bgW) ($bgW * math.sqrt(3));
+  &__foreground {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 2rem;
+    background-image: url("../../assets/img/mosaicReligiousTriumvirate.svg");
+    background-repeat: repeat;
+    background-size: $bgW ($bgW * math.sqrt(3));
+    background-position: (-0.5 * $bgW) 0;
+  }
 }

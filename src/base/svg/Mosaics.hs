@@ -30,12 +30,68 @@ compileSvg =
 
 allSvg :: [ (FilePath , Svg) ]
 allSvg =
-  [ (,) "mosaicPajarita.svg"            pajaritaNazaríMosaic
-  , (,) "mosaicInterlacedSquares.svg"   interlacedSquaresMosaic
-  , (,) "mosaicBee.svg"                 beeHiveMosaic
-  , (,) "mosaicGeo.svg"                 geometricalMosaic
+  [ (,) "mosaicPajarita.svg"             pajaritaNazaríMosaic
+  , (,) "mosaicReligiousTriumvirate.svg" religiousTriumvirateMosaic
+  , (,) "mosaicInterlacedSquares.svg"    interlacedSquaresMosaic
+  , (,) "mosaicBee.svg"                  beeHiveMosaic
+  , (,) "mosaicGeo.svg"                  geometricalMosaic
   ]
 
+
+regularPolygon :: 
+  Int -> Float -> Float -> (Float, Float) -> Svg
+regularPolygon n strokeW radius (c1,c2) =
+    S.path
+      ! d directions
+      ! (strokeWidth .: (2*strokeW))
+  where
+    α  = 2 * pi / (fromIntegral n)
+    r  = radius - strokeW
+    draw k =
+      l  (c1 + r * cos (k*α))
+         (c2 + r * sin (k*α))
+    directions =
+      mkPath $ do
+        m   (c1 + r)  c2
+        mapM_ (draw . fromIntegral) [0..n]
+        S.z
+
+
+evenOddSplit :: [a] -> ([a], [a])
+evenOddSplit [] = ([], [])
+evenOddSplit (x:xs) = (x:o, e)
+  where (e,o) = evenOddSplit xs
+
+starPolygonFirstSpecies :: 
+  Int -> Float -> Float -> (Float, Float) -> Svg
+starPolygonFirstSpecies n strokeW radius (c1,c2) =
+    S.path
+      ! d directions
+      ! (strokeWidth .: (2*strokeW))
+  where
+    α  = 2 * pi / (fromIntegral n)
+    r  = radius - strokeW
+    vertice k' = 
+      let k = fromIntegral k'
+      in 
+        (,) (c1 + r * cos (k*α))
+            (c2 + r * sin (k*α))
+    verticesList = map vertice [0 .. (n-1)]
+    directions =
+      if even n 
+        then 
+          mkPath $ do
+            m   (fst $ head verticesList)  (snd $ head verticesList)
+            mapM_ (uncurry S.l) (fst $ evenOddSplit verticesList)
+            l   (fst $ head verticesList)  (snd $ head verticesList)
+            m   (fst $ verticesList !! 1)  (snd $ verticesList !! 1)
+            mapM_ (uncurry S.l) (snd $ evenOddSplit verticesList)
+            l   (fst $ verticesList !! 1)  (snd $ verticesList !! 1)
+        else
+          mkPath $ do
+            m   (fst $ head verticesList)  (snd $ head verticesList)
+            mapM_ (uncurry S.l) (snd $ evenOddSplit $ verticesList ++ verticesList)
+            l   (fst $ verticesList !! 1)  (snd $ verticesList !! 1)  
 
 -------------------------------------------------------------------------------
 
@@ -78,6 +134,95 @@ pajaritaNazaríMosaic =
       S.path
         ! A.strokeWidth "0"
         ! A.fill        "transparent"
+        ! A.d           lowerDirs
+    upperDirs =
+      mkPath $ do
+        m   ax   ay
+        aa  apt  apt  0  False  True    (mid ax bx)  (mid ay by)
+        aa  apt  apt  0  False  False   bx           by
+        aa  apt  apt  0  False  True    (mid bx cx)  (mid by cy)
+        aa  apt  apt  0  False  False   cx           cy
+        aa  apt  apt  0  False  True    (mid ax cx)  (mid ay cy)
+        aa  apt  apt  0  False  False   ax           ay
+    lowerDirs =
+      mkPath $ do
+        m   bx   by
+        aa  apt  apt  0  False  True    (mid bx dx)  (mid by dy)
+        aa  apt  apt  0  False  False   dx           dy
+        aa  apt  apt  0  False  True    (mid cx dx)  (mid cy dy)
+        aa  apt  apt  0  False  False   cx           cy
+        aa  apt  apt  0  False  True    (mid bx cx)  (mid by cy)
+        aa  apt  apt  0  False  False   bx           by
+        S.z
+
+
+-------------------------------------------------------------------------------
+
+
+religiousTriumvirateMosaic :: Svg
+religiousTriumvirateMosaic =
+    docTypeSvg
+      ! A.viewbox      (S.toValue $ "0 0 1 " ++ show (2*h))
+      ! A.preserveaspectratio "xMinYMin meet"
+      ! A.fill "black"
+      $ do
+        pajarita
+        pajarita               ! A.transform (translate  1       0   )
+        pajarita               ! A.transform (translate  (-0.5)  h   )
+        pajarita               ! A.transform (translate  0.5     h   )
+        pajarita               ! A.transform (translate  (-0.5)  (-h))
+        pajaritaInvertida
+        pajaritaInvertida      ! A.transform (translate  (-1)    0   )
+        pajaritaInvertida      ! A.transform (translate  (-0.5)  (-h))
+        pajaritaInvertida      ! A.transform (translate  0.5     (-h))
+        pajaritaInvertida      ! A.transform (translate  0.5     h   )
+        hexagon
+        hexagon                ! A.transform (translate  (-0.5)  (-h))
+        hexagon                ! A.transform (translate  0.5     (-h))
+        star ! A.fill "orange"
+        star ! A.fill "green"  ! A.transform (translate  (-0.5)  h   )
+        star ! A.fill "green"  ! A.transform (translate  0.5     h   )
+  where
+    h   = (sqrt 3) / 2
+    apt = h / 3
+    (ax,ay) = (0.5 , 0  )
+    (bx,by) = (1   , h  )
+    (cx,cy) = (0   , h  )
+    (dx,dy) = (0.5 , 2*h)
+    mid x y = (x + y) / 2
+    cos60 = 0.5
+    sin60 = 0.5 * sqrt 3
+    hexR  = 0.23
+    (h1x,h1y) = (0.5 + hexR       , apt + h             )
+    (h2x,h2y) = (0.5 + hexR*cos60 , apt + h - hexR*sin60)
+    (h3x,h3y) = (0.5 - hexR*cos60 , apt + h - hexR*sin60)
+    (h4x,h4y) = (0.5 - hexR       , apt + h             )
+    (h5x,h5y) = (0.5 - hexR*cos60 , apt + h + hexR*sin60)
+    (h6x,h6y) = (0.5 + hexR*cos60 , apt + h + hexR*sin60)
+    star = starPolygonFirstSpecies 9 0 0.18 (0.5 , h - apt)
+    hexagon =
+      S.path 
+        ! A.strokeWidth "0"
+        ! A.fill        "white"
+        ! A.d           hexagonDirs
+    hexagonDirs =
+      mkPath $ do
+        m  h1x  h1y
+        l  h2x  h2y 
+        l  h3x  h3y 
+        l  h4x  h4y 
+        l  h5x  h5y 
+        l  h6x  h6y 
+        S.z
+    pajarita =
+      S.path
+        ! A.strokeWidth "0"
+        ! A.fill        "white"
+        ! A.d           upperDirs
+    pajaritaInvertida =
+      S.path
+        ! A.strokeWidth "0"
+        ! A.fill        "blue"
         ! A.d           lowerDirs
     upperDirs =
       mkPath $ do

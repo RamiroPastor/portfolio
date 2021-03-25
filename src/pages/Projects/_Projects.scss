@@ -1,3 +1,14 @@
+@use "sass:math";
+
+.Projects__background {
+  $w: 8rem;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/mosaicReligiousTriumvirate.svg");
+  background-repeat: repeat;
+  background-size: $w ($w * math.sqrt(3));
+}
+
 .Projects {
   display: flex;
   justify-content: center;
@@ -7,5 +18,5 @@
   background-image: url(../../assets/img/wip.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70vmin;
+  background-size: 12vmin;
 }

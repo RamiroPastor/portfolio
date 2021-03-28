@@ -14,10 +14,10 @@ function App() {
 
   const {t, i18n} = useTranslation(["translation"]);
 
-    const changeLanguage = langCode => {
-        setCookieForever("language-RamiroPastorSite", langCode);
-        i18n.changeLanguage(langCode);
-    }
+  const changeLanguage = langCode => {
+      setCookieForever("language-RamiroPastorSite", langCode);
+      i18n.changeLanguage(langCode);
+  }
 
 
   return (

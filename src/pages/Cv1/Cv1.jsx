@@ -175,11 +175,9 @@ export function Cv1(props) {
           <div className="Cv1__personal">
             <div className="Cv1__personalDescription">
               <h1>Ramiro Pastor Martín</h1>
-              <h5>
-                {props.t("cvDesc1")}
-                <br/>
-                {props.t("cvDesc2")}
-              </h5>
+              <p>{props.t("cvDesc1")}</p>
+              <p>{props.t("cvDesc2")}</p>
+              <p>{props.t("cvDesc3")}</p>
             </div>
             <div className="Cv1__personalInfoWrapper">
               <a className="Cv1__personalInfo" href={"mailto:" + process.env.REACT_APP_MYEMAIL}>
@@ -261,7 +259,7 @@ export function Cv1(props) {
               {studies(
                 utretchImg,
                 "Applied Functional Programming in Haskell",
-                "agosto 2017",
+                "2017",
                 props.t("utretchUni")
               )}
               {studies(

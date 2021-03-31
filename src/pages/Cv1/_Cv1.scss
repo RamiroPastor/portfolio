@@ -85,6 +85,9 @@ $sidebarBackground: rgb(230, 230, 255);
   height: var(--x);
   width: var(--x);
   filter: grayscale(80%);
+  &:hover {
+    filter: grayscale(20%);
+  }
 }
 
 .Cv1__personal {

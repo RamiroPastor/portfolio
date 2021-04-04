@@ -311,6 +311,9 @@ $sidebarBackground: rgb(230, 230, 255);
       margin-right: 2rem;
     }
   }
+  &:last-child {
+    display: none;
+  }
 }
 
 .Cv1__studyInfo {

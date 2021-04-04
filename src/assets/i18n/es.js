@@ -7,7 +7,7 @@ export const es =
   // Home page
   , welcome: "Bienvenido/a a la página personal de"
   , imNice: "Soy afable, pero introvertido"
-  , imLazy: "Soy creativo y un poco perezoso, pero trabajo duro cuando me apasiono"
+  , imLazy: "Soy creativo pero trabajo duro"
   , jokeLine1: "—Doctor, tengo todo el cuerpo cubierto de pelo. ¿Qué padezco?"
   , jokeLine2: "—Padece uzté un ozito."
   , likes: "Aficiones:"

@@ -75,6 +75,7 @@
   }
   &__content {
     max-height: 40vh;
+    width: 100%;
     padding-right: 1rem;
     overflow-y: auto;
     @include customScrollbar;

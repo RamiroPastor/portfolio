@@ -38,7 +38,7 @@ export function Home(props) {
               </section>
               <section className="HomeMain__likesAndDislikes">
                 <div className="HomeMain__likes">
-                  <h5>Aficiones:</h5>
+                  <h5>{props.t("likes")}</h5>
                   <ul>
                     <li>{greenTick} {props.t("videogames")}</li>
                     <li>{greenTick} {props.t("youtubeVideos")}</li>

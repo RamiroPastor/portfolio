@@ -40,7 +40,7 @@ export function Home(props) {
                 <div className="HomeMain__likes">
                   <h5>{props.t("likes")}</h5>
                   <ul>
-                    <li>{greenTick} {props.t("videogames")}</li>
+                    <li>{greenTick} {props.t("games")}</li>
                     <li>{greenTick} {props.t("youtubeVideos")}</li>
                     <li>{greenTick} {props.t("music")}</li>
                     <li>{greenTick} {props.t("sleepAndEat")}</li>
@@ -49,10 +49,10 @@ export function Home(props) {
                 <div className="HomeMain__dislikes">
                   <h5>{props.t("dislikes")}</h5>
                   <ul>
-                    <li>{redCross} {props.t("sports")}</li>
+                    <li>{redCross} {props.t("socialMedia")}</li>
                     <li>{redCross} {props.t("manipulativePeople")}</li>
-                    <li>{redCross} {props.t("earlyMornings")}</li>
-                    <li>{redCross} {props.t("moreDislikes")}</li>
+                    <li>{redCross} {props.t("tv")}</li>
+                    <li>{redCross} {props.t("advertising")}</li>
                   </ul>
                 </div>
               </section>

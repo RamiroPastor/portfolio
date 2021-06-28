@@ -50,10 +50,10 @@ export const en =
   , contactMe: "Contact Me!"
   // Learning
   , go: "go"
-  , projectGoT: "Team project with React for UpgradeHub; fetches game of thrones external api"
-  , projectShopeame: "Individual project with Angular for UpgradeHub; fetches mock api, might delay"
-  , projectTrivial: "Individual project with vanilla Js for UpgradeHub; fetches external api for questions"
-  , projectRPG: "Individual project with vanilla Js for UpgradeHub"
+  , projectGoT: "Team project with React; fetches game of thrones external api"
+  , projectShopeame: "Individual project with Angular; fetches mock api, might delay"
+  , projectTrivial: "Individual project with vanilla Js; fetches external api for questions"
+  , projectRPG: "Individual project with vanilla Js"
   // Not Found
   , notFound: "Not Found"
   , hordesOfHell: "The hordes of Hell are coming"

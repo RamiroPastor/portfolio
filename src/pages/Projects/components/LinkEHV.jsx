@@ -10,7 +10,7 @@ export function LinkEHV(props) {
     <img alt="Egipto Historia Viva" src={ehvLogo}/>
 
   return(
-    <a className="LinkEHV" href="https://ehv.netlify.app">
+    <a className="LinkEHV" href="https://ehv.netlify.app" target="_blank" rel="noreferrer">
       <div className="LinkEHV__side LinkEHV__side--left"> {ehvImg}</div>
       <div className="LinkEHV__side LinkEHV__side--front">{ehvImg}</div>
       <div className="LinkEHV__side LinkEHV__side--right">{ehvImg}</div>

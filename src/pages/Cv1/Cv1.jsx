@@ -24,10 +24,10 @@ import skillPythonImgUrl    from "../../assets/cv/skillPython.png";
 import skillReactImgUrl     from "../../assets/cv/skillReact.png";
 import skillSvgImgUrl       from "../../assets/cv/skillSvg.png";
 import skillTopologyImgUrl  from "../../assets/cv/skillTopologia.png";
-import socialGithubImgUrl   from "../../assets/cv/socialGithub.png";
-import socialGitlabImgUrl   from "../../assets/cv/socialGitlab.png";
-import socialLinkedinImgUrl from "../../assets/cv/socialLinkedin.png";
-import socialSoImgUrl       from "../../assets/cv/socialStackoverflow.png";
+// import socialGithubImgUrl   from "../../assets/cv/socialGithub.png";
+// import socialGitlabImgUrl   from "../../assets/cv/socialGitlab.png";
+// import socialLinkedinImgUrl from "../../assets/cv/socialLinkedin.png";
+// import socialSoImgUrl       from "../../assets/cv/socialStackoverflow.png";
 import stmichaelsImgUrl     from "../../assets/cv/stmichaels.png";
 import ucmImgUrl            from "../../assets/cv/ucm.png";
 import upgradehubImgUrl     from "../../assets/cv/upgradehub.png";
@@ -60,10 +60,10 @@ const skillPythonImg    = <img alt="" title=""                 src={skillPythonI
 const skillReactImg     = <img alt="" title=""                 src={skillReactImgUrl}/>;
 const skillSvgImg       = <img alt="" title=""                 src={skillSvgImgUrl}/>;
 const skillTopologyImg  = <img alt="" title=""                 src={skillTopologyImgUrl}/>;
-const socialGithubImg   = <img alt="" title=""                 src={socialGithubImgUrl}/>;
-const socialGitlabImg   = <img alt="" title=""                 src={socialGitlabImgUrl}/>;
-const socialLinkedinImg = <img alt="" title=""                 src={socialLinkedinImgUrl}/>;
-const socialSoImg       = <img alt="" title=""                 src={socialSoImgUrl}/>;
+// const socialGithubImg   = <img alt="" title=""                 src={socialGithubImgUrl}/>;
+// const socialGitlabImg   = <img alt="" title=""                 src={socialGitlabImgUrl}/>;
+// const socialLinkedinImg = <img alt="" title=""                 src={socialLinkedinImgUrl}/>;
+// const socialSoImg       = <img alt="" title=""                 src={socialSoImgUrl}/>;
 const stmichaelsImg     = <img alt="" title=""                 src={stmichaelsImgUrl}/>;
 const ucmImg            = <img alt="" title=""                 src={ucmImgUrl}/>;
 const upgradehubImg     = <img alt="" title=""                 src={upgradehubImgUrl}/>;
@@ -144,7 +144,7 @@ function language(img$$, lang, level) {
   )
 }
 
-
+/* 
 function social(img$$, platform, url) {
 
   return(
@@ -155,7 +155,7 @@ function social(img$$, platform, url) {
     </li>
   )
 }
-
+ */
 
 
 export function Cv1(props) {
@@ -208,7 +208,7 @@ export function Cv1(props) {
         <section className="Cv1__body">
 
           <aside className="Cv1__sidebar">
-            <div className="Cv1__social">
+            {/* <div className="Cv1__social">
               <h3 className="Cv1__sectionHeader">{props.t("social")}</h3>
               <ul className="Cv1__socialList">
                 {social(socialSoImg      , "Stackoverflow", "https://stackoverflow.com/users/3927886"                    )}
@@ -216,7 +216,7 @@ export function Cv1(props) {
                 {social(socialGitlabImg  , "Gitlab"       , "https://gitlab.com/Moch"                                    )}
                 {social(socialLinkedinImg, "LinkedIn"     , "https://www.linkedin.com/in/ramiro-pastor-martin-2a4187125/")}
               </ul>
-            </div>
+            </div> */}
             <div className="Cv1__langs">
               <h3 className="Cv1__sectionHeader">{props.t("languages")}</h3>
               <ul className="Cv1__langList">

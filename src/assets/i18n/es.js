@@ -24,7 +24,7 @@ export const es =
   , cvDesc1: "Matemático, programador y desarrollador web (UX/UI y frontend)."
   , cvDesc2: "Autodidacta, creativo, perfeccionista; encuentro soluciones sencillas y elegantes. Me gusta el código limpio, conciso y reutilizable."
   , cvDesc3: "Visita mi portfolio online para ver lo que puedo hacer, encontrarás el código fuente en mi github."
-  , cvLocation: "Boadilla del Monte, Madrid, España"
+  , cvLocation: "Madrid, España"
   , studies: "estudios y certificaciones"
   , bootcamp: "Bootcamp Programador Web Fullstack"
   , utretchUni: "Utretch University, Utretch, Países Bajos"

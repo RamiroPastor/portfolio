@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 
 
 import cambridgeImgUrl      from "../../assets/cv/cambridge.svg";
@@ -33,7 +33,7 @@ import ucmImgUrl            from "../../assets/cv/ucm.png";
 import upgradehubImgUrl     from "../../assets/cv/upgradehub.png";
 import utretchImgUrl        from "../../assets/cv/utretch.png";
 import webImgUrl            from "../../assets/cv/web.svg";
-import whatsappImgUrl       from "../../assets/cv/whatsapp.svg";
+// import whatsappImgUrl       from "../../assets/cv/whatsapp.svg";
 
 import { Nav } from "../../core/Nav/Nav";
 
@@ -69,7 +69,7 @@ const ucmImg            = <img alt="" title=""                 src={ucmImgUrl}/>
 const upgradehubImg     = <img alt="" title=""                 src={upgradehubImgUrl}/>;
 const utretchImg        = <img alt="" title=""                 src={utretchImgUrl}/>;
 const webImg            = <img alt="" title="Personal site"    src={webImgUrl}/>;
-const whatsappImg       = <img alt="" title="Phone number"     src={whatsappImgUrl}/>;
+// const whatsappImg       = <img alt="" title="Phone number"     src={whatsappImgUrl}/>;
 
 
 
@@ -160,7 +160,7 @@ function social(img$$, platform, url) {
 
 export function Cv1(props) {
 
-  const [showPhone, setShowPhone] = useState(false);
+  // const [showPhone, setShowPhone] = useState(false);
   
   return(
     <div className="Cv1__background">
@@ -184,7 +184,7 @@ export function Cv1(props) {
                   {emailImg}
                   <span>{process.env.REACT_APP_MYEMAIL}</span>
               </a>
-              <div className="Cv1__personalInfo">
+              {/* <div className="Cv1__personalInfo">
                   {whatsappImg}
                   <span>
                     { showPhone 
@@ -192,7 +192,7 @@ export function Cv1(props) {
                       : <button onClick={() => setShowPhone(true)}>show</button>
                     }
                   </span>
-              </div>
+              </div> */}
               <div className="Cv1__personalInfo">
                   {locationImg}
                   <span>{props.t("cvLocation")}</span>

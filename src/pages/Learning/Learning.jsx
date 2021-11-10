@@ -36,25 +36,25 @@ export function Learning(props) {
             "Learning__project--got",
             "GoT",
             props.t("projectGoT"),
-            "https://juego-de-tronos.netlify.app"
+            "/not-found"
           )}
           {learningSection(
             "Learning__project--shopeame",
             "Shopéame",
             props.t("projectShopeame"),
-            "https://shopeame.netlify.app"
+            "/rien-de-rien"
           )}
           {learningSection(
             "Learning__project--trivial",
             "Trivial",
             props.t("projectTrivial"),
-            "https://el-juego-de-las-preguntas.netlify.app"
+            "/no-lo-intentes-mas-aqui-no-hay-nada"
           )}
           {learningSection(
             "Learning__project--rpg",
             "RPG",
             props.t("projectRPG"),
-            "https://ramiropastor-rpg.netlify.app"
+            "/tonto-el-que-lo-lea"
           )}
         </article>
       </div>

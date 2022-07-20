@@ -265,7 +265,7 @@ export function Cv1(props) {
               {studies(
                 ucmImg,
                 props.t("mathsDegree"),
-                "2011 - 2019",
+                "2011 - 2017",
                 "Universidad Complutense de Madrid"
               )}
               {studies(

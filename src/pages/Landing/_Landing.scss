@@ -19,7 +19,7 @@
 
   &__myname {
     font-family: "Varela Round", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     font-variant: small-caps;
     text {
@@ -34,7 +34,7 @@
   }
 
   &__linkToHome {
-    $x: 13vmin;
+    $x: 12vmin;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -44,7 +44,7 @@
     margin-left: -0.5 * $x;
     z-index: 3;
     transition: all 0.5s linear;
-    background: linear-gradient(90deg, silver, indigo 10%, indigo 90%, silver);
+    background: linear-gradient(90deg, violet, white 8%, white 92%, violet);
     background-size: $x $x;
     background-position: 0 0;
     &:hover {
@@ -55,7 +55,7 @@
       font-family: "Varela Round", sans-serif;
       font-weight: bold;
       font-size: 0.02rem;
-      fill: lime;
+      fill: deeppink;
     }
     svg {
       width: 100%;

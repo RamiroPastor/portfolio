@@ -14,16 +14,17 @@ export function LandingBackground(props) {
     ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.translate(ctx.canvas.width / 2, ctx.canvas.width / 2)
     ctx.scale(1, -1)
-    ctx.rotate(counter * Math.PI / 180)
+    // ctx.rotate(counter * Math.PI / 180)
 
     ctx.lineJoin = "round"
-    ctx.lineWidth = 3
+    ctx.lineWidth = 1
 
     const newPoly1 = generateRandomPolygon();
-    const newPoly2 = generateRandomPolygon();
-    const newPoly3 = generateRandomPolygon();
+    // const newPoly2 = generateRandomPolygon();
+    // const newPoly3 = generateRandomPolygon();
 
-    polygons.push(newPoly1, newPoly2, newPoly3);
+    polygons.push(newPoly1);
+    //polygons.push(newPoly1, newPoly2, newPoly3);
 
     for (const p of polygons) {
       drawAndUpdatePolygon(ctx, p)
@@ -50,7 +51,7 @@ export function LandingBackground(props) {
     async function render() {
       draw(context, counter, polygonList)
       counter += 3;
-      await new Promise(r => setTimeout(r, 120));
+      await new Promise(r => setTimeout(r, 60));
       animationFrameId = window.requestAnimationFrame(() => render())
     }
     render()
@@ -75,7 +76,7 @@ function getRandomColor() {
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-  return color+"50";
+  return color+"80";
 }
 
 function getRndInteger(min, max) {
@@ -104,8 +105,8 @@ function drawAndUpdatePolygon(ctx, p) {
   ctx.strokeStyle = p.col
   drawRegularPolygon(ctx, p.n, p.r, x, y)
 
-  p.r += 0.3
-  p.rho += 10
+  p.r += 0.1
+  p.rho += 5
 }
 
 

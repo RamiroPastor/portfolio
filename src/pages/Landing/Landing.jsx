@@ -7,7 +7,7 @@ import { LandingClaimer }    from "./LandingClaimer/LandingClaimer";
 import { LandingForeground } from "./LandingForeground/LandingForeground";
 
 
-const s = 0;       // stroke width for central hexagon
+const s = 0.01;       // stroke width for central hexagon
 const r = 0.5 - s    
 const cos30 = Math.cos(Math.PI / 6);
 const sin30 = Math.sin(Math.PI / 6);
@@ -62,8 +62,8 @@ export function Landing(props) {
                 d= {`
                   M  0.5                 0
                   L  0.5               ${s}
-                  L  ${0.5 + r*cos30}  ${0.5 - r*sin30}
-                  L  ${0.5 + r*cos30}  ${0.5 + r*sin30}
+                  L  ${0.5 + (r+s)*cos30}  ${0.5 - (r+s)*sin30}
+                  L  ${0.5 + (r+s)*cos30}  ${0.5 + (r+s)*sin30}
                   L  0.5               ${1 - s}
                   L  0.5                 1
                   L  1                   1
@@ -76,8 +76,8 @@ export function Landing(props) {
             <use xlinkHref="#hexagon-right-side" fill="white" transform="rotate(180 0.5 0.5)"/>
             <path
               fill="transparent"
-              stroke="blue"
-              strokeWidth={s}
+              stroke="deeppink"
+              strokeWidth={2*s}
               strokeLinejoin="round"
               d= {`
                 M  0.5               ${s}
